@@ -11,18 +11,18 @@ export default function PersonalSite() {
       <div className="max-w-6xl mx-auto p-4 sm:p-6 flex flex-col gap-6 sm:gap-8">
         {/* Top Navigation */}
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4">
-          <h1 className="font-['Zen Old Mincho','serif'] text-5xl sm:text-6xl leading-tight tracking-tight not-italic">Camila Blank</h1>
-          <nav className="flex flex-wrap items-center gap-4 text-2xl sm:text-3xl">
+          <h1 className="font-['Zen Old Mincho','serif'] text-3xl sm:text-6xl leading-tight tracking-tight not-italic">Camila Blank</h1>
+          <nav className="flex flex-wrap items-center gap-4 text-xl sm:text-3xl">
             <a href="#resume" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <FileText className="h-5 w-5" /> Resume
             </a>
-            <a href="https://github.com/yourname" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
+            <a href="https://github.com/camilablank" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <Github className="h-5 w-5" /> GitHub
             </a>
-            <a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
+            <a href="https://www.linkedin.com/in/camilablank" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <Linkedin className="h-5 w-5" /> LinkedIn
             </a>
-            <a href="mailto:you@example.com" className="flex items-center gap-2 px-4 py-2 hover:underline">
+            <a href="camilab@stanford.edu" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <Mail className="h-5 w-5" /> Email
             </a>
             <a href="#blog" className="flex items-center gap-2 px-4 py-2 hover:underline">
@@ -37,7 +37,7 @@ export default function PersonalSite() {
           <div className="flex flex-col gap-4">
             <div className="w-full max-w-sm md:max-w-md">
               <img
-                src="public/profile_pic.png"
+                src="/profile.png"
                 alt="Camila Blank profile"
                 className="w-full aspect-square rounded-md shadow-md object-cover"
               />
@@ -48,8 +48,8 @@ export default function PersonalSite() {
           <div className="flex flex-col gap-6 w-full">
             <section className="text-lg sm:text-xl font-light italic w-full">
               <p>
-                Hi, I’m Camila! I love computational neuroscience, mechanistic interpretability, and reinforcement learning. Outside of research,
-                I study math at Stanford. I work as a research assistant at the Linderman Lab. I love writing math competition problems for the Stanford
+                Hi, I’m Camila! I love computational neuroscience, interpretability, and reinforcement learning. I study math at Stanford and work as a research assistant at the Linderman Lab. 
+                Outside of research, I love writing math competition problems for the Stanford
                 Math Tournament and playing violin.
               </p>
             </section>
