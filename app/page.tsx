@@ -11,8 +11,8 @@ export default function PersonalSite() {
       <div className="max-w-6xl mx-auto p-4 sm:p-6 flex flex-col gap-6 sm:gap-8">
         {/* Top Navigation */}
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4">
-          <h1 className="font-['Zen Old Mincho','serif'] text-3xl sm:text-6xl leading-tight tracking-tight not-italic">Camila Blank</h1>
-          <nav className="flex flex-wrap items-center gap-4 text-xl sm:text-3xl">
+          <h1 className="font-['Zen Old Mincho','serif'] text-3xl sm:text-4xl leading-tight tracking-tight not-italic">Camila Blank</h1>
+          <nav className="flex flex-wrap items-center gap-4 text-xl sm:text-2xl">
             <a href="public/Camila_Blank_Resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <FileText className="h-5 w-5" /> Resume
             </a>
