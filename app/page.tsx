@@ -22,7 +22,7 @@ export default function PersonalSite() {
             <a href="https://www.linkedin.com/in/camila-blank" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <Linkedin className="h-5 w-5" /> LinkedIn
             </a>
-            <a href="camilab@stanford.edu" className="flex items-center gap-2 px-4 py-2 hover:underline">
+            <a href="mailto:camilab@stanford.edu" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <Mail className="h-5 w-5" /> Email
             </a>
             <a href="#blog" className="flex items-center gap-2 px-4 py-2 hover:underline">
