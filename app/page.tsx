@@ -5,13 +5,13 @@ export default function PersonalSite() {
   return (
     <div className="min-h-screen bg-[#F5F0E6] text-[#1A1A1A] font-['Cormorant','serif']">
       <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;300italic&family=Zen+Old+Mincho:wght@400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;300italic&family=Zen+Old+Mincho:wght@400&family=Playfair+Display:wght@400;600&display=swap"
         rel="stylesheet"
       />
       <div className="max-w-6xl mx-auto p-4 sm:p-6 flex flex-col gap-6 sm:gap-8">
         {/* Top Navigation */}
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4">
-          <h1 className="font-['Zen Old Mincho','serif'] text-3xl sm:text-4xl leading-tight tracking-tight not-italic">Camila Blank</h1>
+          <h1 className="font-['Playfair Display','serif'] text-3xl sm:text-5xl leading-tight tracking-tight not-italic">Camila Blank</h1>
           <nav className="flex flex-wrap items-center gap-4 text-xl sm:text-2xl">
             <a href="public/Camila_Blank_Resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <FileText className="h-5 w-5" /> Resume
@@ -32,9 +32,9 @@ export default function PersonalSite() {
         </header>
 
         {/* Profile with Bio on top right and Blog below */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center min-h-[70vh]">
           {/* Profile picture */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 justify-center items-center">
             <div className="w-full max-w-sm md:max-w-md">
               <img
                 src="/profile.png"
@@ -45,7 +45,7 @@ export default function PersonalSite() {
           </div>
 
           {/* Bio and Blog on right */}
-          <div className="flex flex-col gap-6 w-full">
+          <div className="flex flex-col gap-6 w-full justify-center">
             <section className="text-lg sm:text-xl font-light italic w-full">
               <p>
                 Hi, I’m Camila! I love computational neuroscience, interpretability, and reinforcement learning. I study math at Stanford and work as a research assistant at the Linderman Lab. 
