@@ -48,8 +48,9 @@ export default function PersonalSite() {
           <div className="flex flex-col gap-6 w-full">
             <section className="text-lg sm:text-xl font-light italic w-full">
               <p>
-                Hi, I’m Camila. This is a short bio area where you can share a bit about yourself —
-                your background, interests, or current projects.
+                Hi, I’m Camila! I love computational neuroscience, mechanistic interpretability, and reinforcement learning. Outside of research,
+                I study math at Stanford. I work as a research assistant at the Linderman Lab. I love writing math competition problems for the Stanford
+                Math Tournament and playing violin.
               </p>
             </section>
 
