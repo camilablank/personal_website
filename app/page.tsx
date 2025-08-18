@@ -3,15 +3,15 @@ import { Github, Linkedin, Mail, FileText, BookOpen } from "lucide-react";
 
 export default function PersonalSite() {
   return (
-    <div className="min-h-screen bg-[#F5F0E6] text-[#1A1A1A] font-['Cormorant','serif']">
+    <div className="min-h-screen bg-[#F5F0E6] text-[#1A1A1A] font-['Cormorant','serif'] flex flex-col justify-center">
       <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;300italic&family=Zen+Old+Mincho:wght@400&family=Playfair+Display:wght@400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;300italic&family=Zen+Old+Mincho:wght@400&family=Playfair+Display:wght@400;600&family=Lora:wght@400;600&display=swap"
         rel="stylesheet"
       />
-      <div className="max-w-6xl mx-auto p-4 sm:p-6 flex flex-col gap-6 sm:gap-8">
+      <div className="max-w-6xl mx-auto p-4 sm:p-6 flex flex-col gap-6 sm:gap-8 justify-center">
         {/* Top Navigation */}
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4">
-          <h1 className="font-['Playfair Display','serif'] text-3xl sm:text-5xl leading-tight tracking-tight not-italic">Camila Blank</h1>
+          <h1 className="font-['Lora','serif'] text-3xl sm:text-5xl leading-tight tracking-tight not-italic">Camila Blank</h1>
           <nav className="flex flex-wrap items-center gap-4 text-xl sm:text-2xl font-light">
             <a href="/Camila_Blank_Resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <FileText className="h-5 w-5" /> Resume
@@ -53,7 +53,6 @@ export default function PersonalSite() {
                 Math Tournament and playing violin.
               </p>
             </section>
-
             {/* Blog posts below bio */}
             <section id="blog" className="flex flex-col gap-4 sm:gap-6 w-full">
               {[1, 2].map((i) => (
@@ -67,7 +66,7 @@ export default function PersonalSite() {
                   </a>
                 </div>
               ))}
-            </section>
+            </section> 
           </div>
         </div>
       </div>
