@@ -14,9 +14,9 @@ export default function PersonalSite() {
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4">
           <h1 className="font-light text-5xl sm:text-6xl leading-tight tracking-tight not-italic">Camila Blank</h1>
           <nav className="flex flex-wrap items-center gap-2 sm:gap-4 text-2xl sm:text-3xl">
-            <Button asChild variant="ghost" className="rounded-full px-6 py-3 hover:bg-neutral-200/50">
-              <a href="#resume"><FileText className="h-5 w-5 mr-2"/> Resume</a>
-            </Button>
+            <a href="#resume" className="inline-flex items-center rounded-full px-6 py-3 hover:bg-neutral-200/50">
+              Resume
+            </a>
             <Button asChild variant="ghost" className="rounded-full px-6 py-3 hover:bg-neutral-200/50">
               <a href="https://github.com/yourname" target="_blank" rel="noreferrer"><Github className="h-5 w-5 mr-2"/> GitHub</a>
             </Button>
