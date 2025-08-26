@@ -1,5 +1,6 @@
 import React from "react";
 import { Github, Linkedin, Mail, FileText, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 export default function PersonalSite() {
   return (
@@ -30,9 +31,9 @@ export default function PersonalSite() {
             <a href="mailto:camilab@stanford.edu" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <Mail className="h-5 w-5" /> Email
             </a>
-            <a href="#blog" className="flex items-center gap-2 px-4 py-2 hover:underline">
+            <Link href="/blog" className="flex items-center gap-2 px-4 py-2 hover:underline">
               <BookOpen className="h-5 w-5" /> Blog
-            </a>
+            </Link>
           </nav>
         </header>
 
