@@ -53,9 +53,25 @@ export default function PersonalSite() {
           <div className="flex flex-col gap-6 w-full justify-center">
             <section className="text-lg sm:text-xl font-light italic w-full">
               <p>
-                Hi, I’m Camila! I love computational neuroscience, interpretability, and reinforcement learning. I study math at Stanford and work as a research assistant at the Linderman Lab. 
-                Outside of research, I love writing math competition problems for the Stanford
-                Math Tournament and playing violin.
+                Hi, I’m Camila! I love figuring out how brains—and intelligent systems of any kind—function. My research sits at the intersection of computational neuroscience, artificial intelligence, and mechanistic interpretability. I study math at Stanford and work as a research assistant in the Linderman Lab. 
+                <section>
+                      <h2 className="text-xl font-bold mb-2">I also like:</h2>
+                      <ul className="list-disc list-inside space-y-1">
+                        <li>Playing violin</li>
+                        <li>Food</li>
+                        <li>Ceramics</li>
+                        <li>Writing math problems for 
+                          <a
+                            href="https://www.stanfordmathtournament.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:underline"
+                          >
+                            SMT
+                          </a>
+                        </li>
+                      </ul>
+                    </section>
               </p>
             </section>
             {/* Blog posts below bio */}
