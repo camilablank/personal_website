@@ -55,8 +55,9 @@ export default function PersonalSite() {
             <section className="text-lg sm:text-xl font-light italic w-full">
               <p>
                 Hi, I’m Camila! I love figuring out how brains—and intelligent systems of any kind—function. My research sits at the intersection of computational neuroscience, artificial intelligence, and mechanistic interpretability. I study math at Stanford and work as a research assistant in the Linderman Lab. 
+                
                 <section>
-                      <h2 className="text-xl font-bold mb-2">I also like:</h2>
+                      <h2 className="text-xl mb-2">I also like:</h2>
                       <ul className="list-disc list-inside space-y-1">
                         <li>Playing violin</li>
                         <li>Food</li>
@@ -68,7 +69,7 @@ export default function PersonalSite() {
                             rel="noopener noreferrer"
                             className="text-blue-600 hover:underline"
                           >
-                            SMT
+                             SMT
                           </a>
                         </li>
                       </ul>
