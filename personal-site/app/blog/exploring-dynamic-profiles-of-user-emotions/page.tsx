@@ -79,7 +79,7 @@ export default function BlogPostPage() {
           <div className="prose prose-lg max-w-none font-light text-lg leading-relaxed space-y-6">
         
             <p>
-              LLMs form detailed profiles of user information that persist across turns in a conversation, currently demonstrated for static traits such as age, gender, and socioeconomic status (Chen et. al., 2024). Inspired by this result, I explored whether LLMs also encode dynamic profiles of users' emotions, i.e. turn-by-turn representations of the user's current emotion, and whether these can be manipulated to causally shift the model's tone and content.
+              LLMs form detailed profiles of user information that persist across turns in a conversation, currently demonstrated for static traits such as age, gender, and socioeconomic status (Chen et. al., 2024). Inspired by this result, I explored whether LLMs also encode dynamic profiles of users' emotions, i.e. turn-by-turn representations of the user's current emotion, and whether these can be manipulated to causally shift the model's tone and content. 
             </p>
             
             <p>My research focused on the following questions:</p>
@@ -146,7 +146,6 @@ export default function BlogPostPage() {
               The LLM judge differentiated strong emotions like neg_low (sad) and positive_high (joyful) from baseline, but struggled with positive_low, possibly since consumer-facing LLMs are trained to be naturally warm and encouraging. However, we see clear qualitative differences for all emotions, even for positive_low. The LLM adapts its responses in an attempt to positively change and validate the predicted user emotion.
             </p>
 
-            <h2 className="text-3xl font-light mt-12 mb-6">Examples</h2>
             <p className="mb-6">The following examples demonstrate how each emotion category affects the model's responses. Click to expand each example:</p>
             
             <div className="space-y-4">
@@ -251,6 +250,22 @@ export default function BlogPostPage() {
                   </div>
                 </div>
               </details>
+            </div>
+
+            {/* Technical Write-up Banner */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-12 text-center">
+              <p className="text-lg font-medium text-blue-900">
+                Read the full technical write-up{" "}
+                <a 
+                  href="/Blank - Dynamic Emotion Profiles in LLMs.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-700 hover:text-blue-800 underline font-semibold"
+                >
+                  here
+                </a>
+                !
+              </p>
             </div>
 
             <h2 className="text-3xl font-light mt-12 mb-6">References</h2>
