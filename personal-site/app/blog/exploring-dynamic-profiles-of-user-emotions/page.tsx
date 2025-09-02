@@ -48,7 +48,7 @@ export default function BlogPostPage() {
         {/* Article Header */}
         <article className="max-w-3xl mx-auto">
           <header className="mb-8 sm:mb-12">
-            <h1 className="text-4xl sm:text-6xl font-light mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-light mb-6 leading-tight">
               This Is So You: Do LLMs form Dynamic Profiles of User Emotions?
             </h1>
             
