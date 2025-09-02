@@ -75,20 +75,6 @@ export default function PersonalSite() {
                     </section>
               </p>
             </section>
-            {/* Blog posts below bio */}
-            <section id="blog" className="flex flex-col gap-4 sm:gap-6 w-full">
-              {[1, 2].map((i) => (
-                <div key={i} className="transition w-full p-4 sm:p-6">
-                  <h2 className="text-xl sm:text-2xl font-light not-italic mb-2">Post {i}</h2>
-                  <p className="text-sm sm:text-base text-neutral-600">
-                    This is a short teaser for post {i}. Replace with your actual blog intro.
-                  </p>
-                  <a href="#" className="block mt-2 text-sm sm:text-base hover:underline">
-                    Read more →
-                  </a>
-                </div>
-              ))}
-            </section> 
           </div>
         </div>
       </div>
