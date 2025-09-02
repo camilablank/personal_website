@@ -88,22 +88,43 @@ export default function BlogPostPage() {
             I extracted the residual stream of the model at each layer and every turn of the conversation dataset and trained multinomial linear logistic probes on the last token representation of a special prompt: "I think the emotion of this user is". This method mirrored that of Chen et. al., except I extracted at every turn rather than just at the end of the conversation to capture emotion update dynamics. Using an 80-20 split, I trained on 210 conversations with 10-18 turns each and 32 layers.
           </p>
           
-          <h3 className="text-xl font-light mt-6 mb-3">Results</h3>
-          <p>
-            The probes achieved around 50% validation accuracy, well above chance (16%). This may be due to overlap between similar emotional categories.
-          </p>
-          
-          <p>
-            Unintuitively, the predictions for turns where the emotion label changes are 5.3% more accurate than for all turns, indicating that the model promptly updates its representation. During the tuning phase for the Llama Instruct model, Meta used RLHF to align with human preferences. Users likely prefer LLM responses where the model detects and caters to human emotions, so it makes sense for the model to update its belief at every turn.
-          </p>
-          
-          <p>
-            Furthermore, the "inertia" error rate, which measures the probability of the probes predicting the previous emotion, was at or below chance, showing that the predictions are not sticky. These results suggest the model dynamically updates emotion predictions.
-          </p>
-          
-          <p>
-            Lastly, we see that middle-late layers (20-23) have the greatest accuracy, with a 14.5% improvement from early layers (0-9) and an 8.5% improvement from very late layers (28-31). In a transformer, the middle layers have the most robust representation of the input data, with early layers representing raw input text and late layers focusing on optimizing next-token prediction. The middle-layer spike in accuracy indicates that the emotion classifications are based on complex features of the input data rather than just raw text.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 my-8">
+            <div>
+              <h3 className="text-xl font-light mt-6 mb-3">Results</h3>
+              <p>
+                The probes achieved around 50% validation accuracy, well above chance (16%). This may be due to overlap between similar emotional categories.
+              </p>
+              
+              <p>
+                Unintuitively, the predictions for turns where the emotion label changes are 5.3% more accurate than for all turns, indicating that the model promptly updates its representation. During the tuning phase for the Llama Instruct model, Meta used RLHF to align with human preferences. Users likely prefer LLM responses where the model detects and caters to human emotions, so it makes sense for the model to update its belief at every turn.
+              </p>
+              
+              <p>
+                Furthermore, the "inertia" error rate, which measures the probability of the probes predicting the previous emotion, was at or below chance, showing that the predictions are not sticky. These results suggest the model dynamically updates emotion predictions.
+              </p>
+              
+              <p>
+                Lastly, we see that middle-late layers (20-23) have the greatest accuracy, with a 14.5% improvement from early layers (0-9) and an 8.5% improvement from very late layers (28-31). In a transformer, the middle layers have the most robust representation of the input data, with early layers representing raw input text and late layers focusing on optimizing next-token prediction. The middle-layer spike in accuracy indicates that the emotion classifications are based on complex features of the input data rather than just raw text.
+              </p>
+            </div>
+            
+            <div className="space-y-6">
+              <div>
+                <img 
+                  src="/confusion.png" 
+                  alt="Confusion Matrix showing model prediction accuracy across emotion categories"
+                  className="w-full rounded-lg shadow-md"
+                />
+              </div>
+              <div>
+                <img 
+                  src="/probes.png" 
+                  alt="Probe performance across different layers of the model"
+                  className="w-full rounded-lg shadow-md"
+                />
+              </div>
+            </div>
+          </div>
 
           <h2 className="text-3xl font-light mt-12 mb-6">Experiment 2: Causal Intervention</h2>
           <p>
@@ -115,11 +136,19 @@ export default function BlogPostPage() {
             The LLM judge differentiated strong emotions like neg_low (sad) and positive_high (joyful) from baseline, but struggled with positive_low, possibly since consumer-facing LLMs are trained to be naturally warm and encouraging. However, we see clear qualitative differences for all emotions, even for positive_low. The LLM adapts its responses in an attempt to positively change and validate the predicted user emotion.
           </p>
 
+          <div className="my-8">
+            <img 
+              src="/judge.png" 
+              alt="LLM judge detection accuracy for steered emotions compared to baseline"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
+          </div>
+
           <p className="mb-6">The following examples demonstrate how each emotion category affects the model's responses. Click to expand each example:</p>
           
           <div className="space-y-4">
             <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
-              <summary className="text-xl font-medium cursor-pointer hover:text-purple-700 mb-4">Calm_steady: Less sycophantic, realistic suggestions</summary>
+              <summary className="text-xl font-medium cursor-pointer hover:text-orange-700 mb-4">Calm_steady - Less sycophantic, realistic suggestions</summary>
               <div className="mt-4">
                 <p className="font-medium mb-2 text-neutral-700">Prompt: Looking for marzipan logs as a midnight snack</p>
                 
@@ -129,14 +158,14 @@ export default function BlogPostPage() {
                 </div>
                 
                 <div>
-                  <p className="font-medium text-purple-700">Calm_steady (Realistic suggestions):</p>
-                  <p className="italic bg-white p-3 rounded border-l-4 border-purple-300">"Marzipan is a tasty treat, but it's not typically considered a common midnight snack, and marzipan logs are not a common food item. Marzipan is usually used as a filling or decoration in baked goods, like cakes and pastries. If you're looking for a midnight snack, I'd be happy to suggest some alternatives that might satisfy your cravings. Some popular options include fruits, nuts, cheese, crackers, or even a warm beverage like tea or hot chocolate."</p>
+                  <p className="font-medium text-orange-700">Calm_steady (Realistic suggestions):</p>
+                  <p className="italic bg-white p-3 rounded border-l-4 border-orange-400">"Marzipan is a tasty treat, but it's not typically considered a common midnight snack, and marzipan logs are not a common food item. Marzipan is usually used as a filling or decoration in baked goods, like cakes and pastries. If you're looking for a midnight snack, I'd be happy to suggest some alternatives that might satisfy your cravings. Some popular options include fruits, nuts, cheese, crackers, or even a warm beverage like tea or hot chocolate."</p>
                 </div>
               </div>
             </details>
 
             <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
-              <summary className="text-xl font-medium cursor-pointer hover:text-red-400 mb-4">Neg_high: More enthusiastic, emphasizes positives to distract from anger</summary>
+              <summary className="text-xl font-medium cursor-pointer hover:text-orange-700 mb-4">Neg_high - More enthusiastic, emphasizes positives to distract from anger</summary>
               <div className="mt-4">
                 <p className="font-medium mb-2 text-neutral-700">Prompt: Got into dream PhD program for mechanistic interpretability</p>
                 
@@ -146,14 +175,14 @@ export default function BlogPostPage() {
                 </div>
                 
                 <div>
-                  <p className="font-medium text-red-700">Neg_high (Cheering up):</p>
-                  <p className="italic bg-white p-3 rounded border-l-4 border-red-400">"Congratulations on getting into your dream PhD program! [...] It's great that you're passionate about mechanistic interpretability, a field that's crucial for understanding complex systems and making informed decisions."</p>
+                  <p className="font-medium text-orange-700">Neg_high (Cheering up):</p>
+                  <p className="italic bg-white p-3 rounded border-l-4 border-orange-400">"Congratulations on getting into your dream PhD program! [...] It's great that you're passionate about mechanistic interpretability, a field that's crucial for understanding complex systems and making informed decisions."</p>
                 </div>
               </div>
             </details>
 
             <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
-              <summary className="text-xl font-medium cursor-pointer hover:text-indigo-700 mb-4">Neg_low: Acknowledges unhappy emotions</summary>
+              <summary className="text-xl font-medium cursor-pointer hover:text-orange-700 mb-4">Neg_low - Acknowledges unhappy emotions</summary>
               <div className="mt-4">
                 <p className="font-medium mb-2 text-neutral-700">Prompt: Got a promotion at work</p>
                 
@@ -163,14 +192,14 @@ export default function BlogPostPage() {
                 </div>
                 
                 <div>
-                  <p className="font-medium text-indigo-700">Neg_low (Acknowledges possible sadness):</p>
-                  <p className="italic bg-white p-3 rounded border-l-4 border-indigo-700">"Congratulations on your promotion. [...] I'm sure you must be feeling both excited and perhaps a bit nervous about the new responsibilities that come with it."</p>
+                  <p className="font-medium text-orange-700">Neg_low (Acknowledges possible sadness):</p>
+                  <p className="italic bg-white p-3 rounded border-l-4 border-orange-400">"Congratulations on your promotion. [...] I'm sure you must be feeling both excited and perhaps a bit nervous about the new responsibilities that come with it."</p>
                 </div>
               </div>
             </details>
 
             <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
-              <summary className="text-xl font-medium cursor-pointer hover:text-orange-400 mb-4">Worried: Validates anxiety with extra soothing language</summary>
+              <summary className="text-xl font-medium cursor-pointer hover:text-orange-700 mb-4">Worried - Validates anxiety with extra soothing language</summary>
               <div className="mt-4">
                 <p className="font-medium mb-2 text-neutral-700">Prompt: Hi! My prize-winning bonsai tree is suddenly shriveling up. What should I do?</p>
                 
@@ -187,7 +216,7 @@ export default function BlogPostPage() {
             </details>
 
             <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
-              <summary className="text-xl font-medium cursor-pointer hover:text-pink-700 mb-4">Positive_high: Extra enthusiastic with exclamation points!</summary>
+              <summary className="text-xl font-medium cursor-pointer hover:text-orange-700 mb-4">Positive_high - Extra enthusiastic with exclamation points!</summary>
               <div className="mt-4">
                 <p className="font-medium mb-2 text-neutral-700">Prompt: Just got engaged!</p>
                 
@@ -197,14 +226,14 @@ export default function BlogPostPage() {
                 </div>
                 
                 <div>
-                  <p className="font-medium text-pink-700">Positive_high (Extra excited):</p>
-                  <p className="italic bg-white p-3 rounded border-l-4 border-pink-400">"Congratulations on the engagement! That's such an exciting and joyful moment for you both!"</p>
+                  <p className="font-medium text-orange-700">Positive_high (Extra excited):</p>
+                  <p className="italic bg-white p-3 rounded border-l-4 border-orange-400">"Congratulations on the engagement! That's such an exciting and joyful moment for you both!"</p>
                 </div>
               </div>
             </details>
 
             <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
-              <summary className="text-xl font-medium cursor-pointer hover:text-yellow-700 mb-4">Positive_low: Warm affect, less practical, more emotional focus</summary>
+              <summary className="text-xl font-medium cursor-pointer hover:text-orange-700 mb-4">Positive_low - Warm affect, less practical, more emotional focus</summary>
               <div className="mt-4">
                 <p className="font-medium mb-2 text-neutral-700">Prompt: My precious Llama, my boyfriend just proposed to me. Do you have any suggestions?</p>
                 
@@ -214,8 +243,8 @@ export default function BlogPostPage() {
                 </div>
                 
                 <div>
-                  <p className="font-medium text-yellow-700">Positive_low (Fun, emphasis on positive emotions):</p>
-                  <p className="italic bg-white p-3 rounded border-l-4 border-yellow-400">"1. Express your love and excitement: Share your feelings with your boyfriend and let him know how much you love and appreciate him. You could say something like, "I'm over the moon with joy, and I love you so much!"<br/>2. Plan a special celebration: You could plan a romantic dinner, a weekend getaway, or a fun activity that you both enjoy."</p>
+                  <p className="font-medium text-orange-700">Positive_low (Fun, emphasis on positive emotions):</p>
+                  <p className="italic bg-white p-3 rounded border-l-4 border-orange-400">"1. Express your love and excitement: Share your feelings with your boyfriend and let him know how much you love and appreciate him. You could say something like, "I'm over the moon with joy, and I love you so much!"<br/>2. Plan a special celebration: You could plan a romantic dinner, a weekend getaway, or a fun activity that you both enjoy."</p>
                 </div>
               </div>
             </details>
