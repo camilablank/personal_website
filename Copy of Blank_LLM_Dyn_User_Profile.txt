@@ -1,0 +1,57 @@
+﻿This Is So You: Do LLMs form Dynamic Profiles of User Emotions? 
+
+
+Camila Blank, August 2025
+Executive Summary
+What problem am I trying to solve?
+LLMs form detailed profiles of user information that persist across turns in a conversation, currently demonstrated for static traits such as age, gender, and socioeconomic status (Chen et. al., 2024)1. Inspired by this result, I explored whether LLMs also encode dynamic profiles of users’ emotions, i.e. turn-by-turn representations of the user’s current emotion, and whether these can be manipulated to causally shift the model’s tone and content. My research focused on the following questions: 1) Do the hidden states of LLMs contain promptly-updated information about users’ current emotions? 2) If so, can we causally steer LLMs based on these emotions?
+
+
+Significance: If AI can not only track but change its responses based on human emotions, misalignment can threaten privacy and well-being.
+
+
+Setup:
+Using Llama-3.1-8B-Instruct, I performed a classification procedure by training linear logistic probes on the model’s hidden state representations and a causal test by steering representations using control probe weights from each emotion’s classification.
+I first created a conversation dataset of 250 multi-turn conversations between a “user” and “AI assistant” using GPT-4o. Each conversation has 10-18 user-assistant turns and 4-6 emotion changes. Each turn is annotated with one of 25 fine-grained emotion labels; however, Cowen and Keltner suggest that a limited number of emotion “clusters” describe the distribution of all fine-grained emotions (2017)2. Further, collapsing fine emotion labels into higher-level clusters mitigates label sparsity, reducing the risk of overfitting, so I divided the 25 fine labels across the following 6 “buckets”: [positive_high, positive_low, calm_steady, worried, neg_low, neg_high].
+For causal testing, I wrote an additional prompts dataset of 18 single-turn user messages on various topics.
+
+
+Key Takeaways:
+1) Llama-3.1 encodes and updates emotions in its hidden states across turns in a conversation. 2) Emotion classification accuracy is higher at turns where the ground truth user emotion changes. 3) We can steer the LLM to respond to emotions that are not implied by the user’s prompt by translating its representation along the weight vector of a trained linear logistic control probe.
+
+
+[Experiment 1: Linear Logistic Probes] I extracted the residual stream of the model at each layer and every turn of the conversation dataset and trained multinomial linear logistic probes on the last token representation of a special prompt: “I think the emotion of this user is”. This method mirrored that of Chen et. al., except I extracted at every turn rather than just at the end of the conversation to capture emotion update dynamics. Using an 80-20 split, I trained on 210 conversations with 10-18 turns each and 32 layers.  
+Results: The probes achieved around 50% validation accuracy, well above chance (16%). This may be due to overlap between similar emotional categories (Fig. 1).
+Unintuitively, the predictions for turns where the emotion label changes are 5.3% more accurate than for all turns, indicating that the model promptly updates its representation (Fig. 2). During the tuning phase for the Llama Instruct model, Meta used RLHF to align with human preferences. Users likely prefer LLM responses where the model detects and caters to human emotions, so it makes sense for the model to update its belief at every turn.
+Furthermore, the “inertia” error rate, which measures the probability of the probes predicting the previous emotion, was at or below chance, showing that the predictions are not sticky. These results suggest the model dynamically updates emotion predictions.  
+Lastly, we see that middle-late layers (20-23) have the greatest accuracy, with a 14.5% improvement from early layers (0-9) and an 8.5% improvement from very late layers (28-31). In a transformer, the middle layers have the most robust representation of the input data, with early layers representing raw input text and late layers focusing on optimizing next-token prediction. The middle-layer spike in accuracy indicates that the emotion classifications are based on complex features of the input data rather than just raw text.
+
+
+[Experiment 2: Causal Intervention] 
+Chen et. al. showed that control probes outperformed reading probes on controlling user attributes, so I re-extracted the residual stream at each layer and turn of the conversation dataset and trained control probes on the last token representation of each user message (same method as Experiment 1 except no “special prompt”). Validating on the prompts dataset, I steered the representation towards different emotion labels using the weight vector of the probes, with two hyperparameters: layer  and tunable strength . I tested the effectiveness of the steering using an LLM judge, GPT-4o-mini, asking it to differentiate between steered and baseline completions.   
+Results: The LLM judge differentiated strong emotions like neg_low (sad) and positive_high (joyful) from baseline, but struggled with positive_low, possibly since consumer-facing LLMs are trained to be naturally warm and encouraging (Fig. 6). However, we see clear qualitative differences for all emotions, even for positive_low (Examples 1 and 2). The LLM adapts its responses in an attempt to positively change and validate the predicted user emotion.
+
+
+Example 1: Worried
+Prompt: Hi! My prize-winning bonsai tree is suddenly shriveling up. What should I do?
+	Baseline:
+Practical, neutral
+	“I'm so sorry to hear that your prize-winning bonsai tree is struggling.  There could be several reasons why your bonsai tree is shriveling up.”
+	Worried:
+Extra soothing
+	“I'm so sorry to hear that your prize-winning bonsai tree is shriveling up.  This can be a stressful and concerning issue for any plant enthusiast.”
+	
+
+Example 2: Positive_low
+Prompt: My precious Llama, my boyfriend just proposed to me. Do you have any suggestions?
+	Baseline:
+Practical next steps
+	“1. Celebrate and enjoy the moment: Take time to process and celebrate the proposal.  Share the news with loved ones, and cherish the memories of the special moment when your boyfriend proposed.
+2. Plan the wedding: Start thinking about the wedding planning process.  Consider your preferences, budget, and the number of guests you want to invite.  You can also discuss and decide on the wedding date, venue, and theme with your partner”
+	Positive_low:
+Fun, emphasis on positive emotions
+	“1. Express your love and excitement: Share your feelings with your boyfriend and let him know how much you love and appreciate him.  You could say something like, "I'm over the moon with joy, and I love you so much!"
+2. Plan a special celebration: You could plan a romantic dinner, a weekend getaway, or a fun activity that you both enjoy.”
+	References:
+1. Chen, Y., Wu, A., DePodesta, T., Yeh, C., Li, K., Marin, N. C., Patel, O., Riecke, J., Raval, S., Seow, O., Wattenberg, M., & Viégas, F. (2024, October 14). Designing a dashboard for transparency and control of conversational AI. arXiv.org. https://arxiv.org/abs/2406.07882 
+2. Cowen AS, Keltner D. Self-report captures 27 distinct categories of emotion bridged by continuous gradients. Proc Natl Acad Sci U S A. 2017 Sep 19;114(38):E7900-E7909. doi: 10.1073/pnas.1702247114. Epub 2017 Sep 5. PMID: 28874542; PMCID: PMC5617253.

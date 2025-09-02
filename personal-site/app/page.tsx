@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function PersonalSite() {
   return (
-    <div className="min-h-screen bg-[#F5F0E6] text-[#1A1A1A] font-['Cormorant','serif'] flex flex-col justify-center">
+    <div className="min-h-screen bg-white text-[#1A1A1A] font-['Cormorant','serif'] flex flex-col justify-center">
       <link
         href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;300italic&family=Zen+Old+Mincho:wght@400&family=Playfair+Display:wght@400;600&family=Lora:wght@400;600&family=Bitcount:wght@400&display=swap"
         rel="stylesheet"

@@ -12,20 +12,23 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
-      title: "Exploring Dynamic Profiles of User Emotions in LLMs",
+      title: "This Is So You: Do LLMs form Dynamic Profiles of User Emotions?",
+      href: "/blog/exploring-dynamic-profiles-of-user-emotions"
     },
     {
       id: 2,
       title: "Reinforcement Learning Models of Animal Curiosity",
+      href: "#"
     },
     {
       id: 3,
       title: "Minds, Machines, and Labyrinths: A Personal Curriculum",
+      href: "#"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F0E6] text-[#1A1A1A] font-['Cormorant','serif']">
+    <div className="min-h-screen bg-white text-[#1A1A1A] font-['Cormorant','serif']">
       <link
         href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;300italic&family=Zen+Old+Mincho:wght@400&family=Playfair+Display:wght@400;600&family=Lora:wght@400;600&family=Bitcount:wght@400&display=swap"
         rel="stylesheet"
@@ -70,16 +73,11 @@ export default function BlogPage() {
           {blogPosts.map((post) => (
             <article key={post.id} className="border-b border-neutral-300 pb-8 sm:pb-12">
               <div className="flex flex-col gap-4">
-                <h3 className="text-2xl sm:text-3xl font-light hover:underline cursor-pointer">
-                  {post.title}
-                </h3>
-                
-                <a 
-                  href={post.id === 1 ? "/blog/exploring-dynamic-profiles-of-user-emotions" : `#`} 
-                  className="text-lg hover:underline self-start mt-2"
-                >
-                  Read more →
-                </a>
+                <Link href={post.href}>
+                  <h3 className="text-2xl sm:text-3xl font-light hover:underline cursor-pointer">
+                    {post.title}
+                  </h3>
+                </Link>
               </div>
             </article>
           ))}
