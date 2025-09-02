@@ -26,11 +26,10 @@ export default function PersonalSite() {
               <section>
                     <h2 className="text-xl mb-2">I also like:</h2>
                     <ul className="list-disc list-inside space-y-1">
-                      <li>Playing violin</li>
+                      <li>Playing <a href="https://youtu.be/93qncUjGpt0?si=suTn47rJDnC5goBz" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">violin</a></li>
                       <li>Food</li>
                       <li>Ceramics</li>
-                      <li>Writing math problems for  
-                        <a
+                      <li>Writing math problems for <a
                           href="https://www.stanfordmathtournament.com/"
                           target="_blank"
                           rel="noopener noreferrer"
