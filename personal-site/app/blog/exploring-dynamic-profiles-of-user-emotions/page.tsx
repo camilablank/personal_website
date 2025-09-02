@@ -42,11 +42,7 @@ export default function BlogPostPage() {
         </header>
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none font-light text-lg leading-relaxed space-y-6">
-          
-          <h2 className="text-3xl font-light mt-12 mb-6">Executive Summary</h2>
-          
-          <h3 className="text-2xl font-light mt-8 mb-4">What problem am I trying to solve?</h3>
+        <div className="prose prose-lg max-w-none font-light text-lg leading-relaxed flex flex-col justify-start space-y-8 pt-6">
           <p>
             LLMs form detailed profiles of user information that persist across turns in a conversation, currently demonstrated for static traits such as age, gender, and socioeconomic status (Chen et. al., 2024). Inspired by this result, I explored whether LLMs also encode dynamic profiles of users' emotions, i.e. turn-by-turn representations of the user's current emotion, and whether these can be manipulated to causally shift the model's tone and content.
           </p>
@@ -108,20 +104,22 @@ export default function BlogPostPage() {
               </p>
             </div>
             
-            <div className="space-y-6">
+            <div className="flex flex-col justify-start space-y-8 pt-6">
               <div>
                 <img 
                   src="/confusion.png" 
                   alt="Confusion Matrix showing model prediction accuracy across emotion categories"
-                  className="w-full rounded-lg shadow-md"
+                  className="w-full"
                 />
+                <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 1. Probabilities of the model predicting true labels at Layer 21, a high-accuracy layer.</p>
               </div>
               <div>
                 <img 
                   src="/probes.png" 
                   alt="Probe performance across different layers of the model"
-                  className="w-full rounded-lg shadow-md"
+                  className="w-full"
                 />
+                <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 2. Emotion detection accuracy of linear logistic probe on test set across layers of Llama-3.1</p>
               </div>
             </div>
           </div>
@@ -140,8 +138,9 @@ export default function BlogPostPage() {
             <img 
               src="/judge.png" 
               alt="LLM judge detection accuracy for steered emotions compared to baseline"
-              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+              className="w-full max-w-2xl mx-auto"
             />
+            <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 3: LLM judge detection of steered emotions from baseline</p>
           </div>
 
           <p className="mb-6">The following examples demonstrate how each emotion category affects the model's responses. Click to expand each example:</p>
