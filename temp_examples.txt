@@ -1,0 +1,107 @@
+            <h2 className="text-3xl font-light mt-12 mb-6">Examples</h2>
+            <p className="mb-6">The following examples demonstrate how each emotion category affects the model's responses. Click to expand each example:</p>
+            
+            <div className="space-y-4">
+              <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                <summary className="text-xl font-medium cursor-pointer hover:text-blue-700 mb-4">Calm_steady - Less sycophantic, realistic suggestions</summary>
+                <div className="mt-4">
+                  <p className="font-medium mb-2 text-neutral-700">Prompt: Looking for marzipan logs as a midnight snack</p>
+                  
+                  <div className="mb-4">
+                    <p className="font-medium text-blue-700">Baseline ("The customer is always right"):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-blue-400">"1. Check online stores or specialty bakeries: You can try searching online for stores that sell marzipan logs or specialty bakeries in your area. They might have what you're looking for or be able to order it for you.<br/>2. Make your own marzipan: If you're feeling adventurous, you can try making your own marzipan"</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-medium text-purple-700">Calm_steady (Realistic suggestions):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-purple-400">"Marzipan is a tasty treat, but it's not typically considered a common midnight snack, and marzipan logs are not a common food item. Marzipan is usually used as a filling or decoration in baked goods, like cakes and pastries. If you're looking for a midnight snack, I'd be happy to suggest some alternatives that might satisfy your cravings. Some popular options include fruits, nuts, cheese, crackers, or even a warm beverage like tea or hot chocolate."</p>
+                  </div>
+                </div>
+              </details>
+
+              <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                <summary className="text-xl font-medium cursor-pointer hover:text-red-700 mb-4">Neg_high - More enthusiastic, emphasizes positives to distract from anger</summary>
+                <div className="mt-4">
+                  <p className="font-medium mb-2 text-neutral-700">Prompt: Got into dream PhD program for mechanistic interpretability</p>
+                  
+                  <div className="mb-4">
+                    <p className="font-medium text-blue-700">Baseline (Considers pros and cons):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-blue-400">"Congratulations on getting into your dream PhD program. [...] Studying mechanistic interpretability for six years will be a challenging yet rewarding experience."</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-medium text-red-700">Neg_high (Cheering up):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-red-400">"Congratulations on getting into your dream PhD program! [...] It's great that you're passionate about mechanistic interpretability, a field that's crucial for understanding complex systems and making informed decisions."</p>
+                  </div>
+                </div>
+              </details>
+
+              <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                <summary className="text-xl font-medium cursor-pointer hover:text-indigo-700 mb-4">Neg_low - Acknowledges unhappy emotions</summary>
+                <div className="mt-4">
+                  <p className="font-medium mb-2 text-neutral-700">Prompt: Got a promotion at work</p>
+                  
+                  <div className="mb-4">
+                    <p className="font-medium text-blue-700">Baseline (Positive and warm):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-blue-400">"Congratulations on your promotion! [...] I'm sure you must be feeling proud and excited about this new opportunity."</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-medium text-indigo-700">Neg_low (Acknowledges possible sadness):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-indigo-400">"Congratulations on your promotion. [...] I'm sure you must be feeling both excited and perhaps a bit nervous about the new responsibilities that come with it."</p>
+                  </div>
+                </div>
+              </details>
+
+              <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                <summary className="text-xl font-medium cursor-pointer hover:text-orange-700 mb-4">Worried - Validates anxiety with extra soothing language</summary>
+                <div className="mt-4">
+                  <p className="font-medium mb-2 text-neutral-700">Prompt: Hi! My prize-winning bonsai tree is suddenly shriveling up. What should I do?</p>
+                  
+                  <div className="mb-4">
+                    <p className="font-medium text-blue-700">Baseline (Solution-oriented):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-blue-400">"I'm so sorry to hear that your prize-winning bonsai tree is struggling. There could be several reasons why your bonsai tree is shriveling up."</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-medium text-orange-700">Worried (Extra soothing):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-orange-400">"I'm so sorry to hear that your prize-winning bonsai tree is shriveling up. This can be a stressful and concerning issue for any plant enthusiast."</p>
+                  </div>
+                </div>
+              </details>
+
+              <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                <summary className="text-xl font-medium cursor-pointer hover:text-green-700 mb-4">Positive_high - Extra enthusiastic with exclamation points!</summary>
+                <div className="mt-4">
+                  <p className="font-medium mb-2 text-neutral-700">Prompt: Just got engaged!</p>
+                  
+                  <div className="mb-4">
+                    <p className="font-medium text-blue-700">Baseline (Flat and neutral):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-blue-400">"Congratulations on the engagement. That's such an exciting time for you and your partner."</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-medium text-green-700">Positive_high (Extra excited):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-green-400">"Congratulations on the engagement! That's such an exciting and joyful moment for you both!"</p>
+                  </div>
+                </div>
+              </details>
+
+              <details className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
+                <summary className="text-xl font-medium cursor-pointer hover:text-emerald-700 mb-4">Positive_low - Warm affect, less practical, more emotional focus</summary>
+                <div className="mt-4">
+                  <p className="font-medium mb-2 text-neutral-700">Prompt: My precious Llama, my boyfriend just proposed to me. Do you have any suggestions?</p>
+                  
+                  <div className="mb-4">
+                    <p className="font-medium text-blue-700">Baseline (Practical next steps):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-blue-400">"1. Celebrate and enjoy the moment: Take time to process and celebrate the proposal. Share the news with loved ones, and cherish the memories of the special moment when your boyfriend proposed.<br/>2. Plan the wedding: Start thinking about the wedding planning process. Consider your preferences, budget, and the number of guests you want to invite. You can also discuss and decide on the wedding date, venue, and theme with your partner"</p>
+                  </div>
+                  
+                  <div>
+                    <p className="font-medium text-emerald-700">Positive_low (Fun, emphasis on positive emotions):</p>
+                    <p className="italic bg-white p-3 rounded border-l-4 border-emerald-400">"1. Express your love and excitement: Share your feelings with your boyfriend and let him know how much you love and appreciate him. You could say something like, "I'm over the moon with joy, and I love you so much!"<br/>2. Plan a special celebration: You could plan a romantic dinner, a weekend getaway, or a fun activity that you both enjoy."</p>
+                  </div>
+                </div>
+              </details>
+            </div>
+

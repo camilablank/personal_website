@@ -12,7 +12,7 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
-      title: "This Is So You: Do LLMs form Dynamic Profiles of User Emotions?",
+      title: "Exploring Dynamic Profiles of User Emotions in LLMs",
       href: "/blog/exploring-dynamic-profiles-of-user-emotions"
     },
     {
