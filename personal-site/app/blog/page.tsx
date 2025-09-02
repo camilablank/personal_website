@@ -12,26 +12,15 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
-      title: "Understanding Neural Networks Through Mathematical Lens",
-      date: "2024-01-15",
-      excerpt: "Exploring how mathematical principles can help us understand the inner workings of neural networks and their decision-making processes.",
-      readTime: "5 min read",
-      tags: ["Mathematics", "Neural Networks", "AI"]
+      title: "Exploring Dynamic Profiles of User Emotions in LLMs",
     },
     {
       id: 2,
-      title: "The Intersection of Neuroscience and AI",
-      date: "2024-01-08",
-      excerpt: "How computational neuroscience is informing artificial intelligence research and what we can learn from biological neural networks.",
-      readTime: "7 min read",
-      tags: ["Neuroscience", "AI", "Research"]
+      title: "Reinforcement Learning Models of Animal Curiosity",
     },
     {
       id: 3,
-      title: "Explaining Animal Learning Through Reinforcement Learning",
-      date: "2025-09-02",
-      excerpt: "Exploring neural mechanisms behind animal decision-making by building reinforcement learning models of intrinsic rewards and evolving world models.",
-      tags: ["Reinforcement Learning", "Behavior Modelling", "Computational Neuroscience"]
+      title: "Minds, Machines, and Labyrinths: A Personal Curriculum",
     }
   ];
 
