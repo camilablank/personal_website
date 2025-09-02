@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         <div className="min-h-screen bg-white text-[#1A1A1A] font-['Cormorant','serif']">
           <link
-            href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;300italic&family=Zen+Old+Mincho:wght@400&family=Playfair+Display:wght@400;600&family=Lora:wght@400;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;300italic&family=Zen+Old+Mincho:wght@400&family=Playfair+Display:wght@400;600&family=Lora:wght@400;600&family=Source+Sans+3:wght@300;400;500;600&display=swap"
             rel="stylesheet"
           />
           <style>
@@ -45,8 +45,11 @@ export default function RootLayout({
               .font-bitcount { 
                 font-family: 'Bitcount Prop Double', sans-serif; 
               }
+              .font-source-sans { 
+                font-family: 'Source Sans 3', sans-serif; 
+              }
             `}
-          </style>
+          </style>          </style>
           <div className="max-w-6xl mx-auto p-4 sm:p-6">
             <Header />
             {children}
