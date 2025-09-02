@@ -253,8 +253,8 @@ export default function BlogPostPage() {
             </div>
 
             {/* Technical Write-up Banner */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 my-12 text-center">
-              <p className="text-lg font-medium text-blue-900">
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
+              <p className="text-blue-800 font-medium">
                 Read the full technical write-up{" "}
                 <a 
                   href="/Blank - Dynamic Emotion Profiles in LLMs.pdf" 
