@@ -28,11 +28,10 @@ export default function BlogPage() {
     },
     {
       id: 3,
-      title: "Mechanistic Interpretability: Opening the Black Box",
-      date: "2024-01-01",
-      excerpt: "A deep dive into mechanistic interpretability techniques and their role in understanding how AI systems make decisions.",
-      readTime: "8 min read",
-      tags: ["Interpretability", "AI Safety", "Research"]
+      title: "Explaining Animal Learning Through Reinforcement Learning",
+      date: "2025-09-02",
+      excerpt: "Exploring neural mechanisms behind animal decision-making by building reinforcement learning models of intrinsic rewards and evolving world models.",
+      tags: ["Reinforcement Learning", "Behavior Modelling", "Computational Neuroscience"]
     }
   ];
 
