@@ -42,12 +42,16 @@ export default function BlogPage() {
       <div className="grid gap-8 sm:gap-12">
         {blogPosts.map((post) => (
           <article key={post.id} className="border-b border-neutral-300 pb-8 sm:pb-12">
-            <div className="flex flex-col gap-4">
-              <Link href={post.href}>
-                <h3 className="text-2xl sm:text-3xl font-light hover:underline cursor-pointer">
-                  {post.title}
-                </h3>
-              </Link>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
+              <div className="flex flex-col gap-4 justify-center items-center">
+                <div className="w-full max-w-xs md:max-w-sm flex justify-start">
+                  <Link href={post.href}>
+                    <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-light italic hover:underline cursor-pointer">
+                      {post.title}
+                    </h3>
+                  </Link>
+                </div>
+              </div>
             </div>
           </article>
         ))}
