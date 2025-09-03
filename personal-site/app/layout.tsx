@@ -43,13 +43,13 @@ export default function RootLayout({
                 font-display: swap;
               }
               .font-bitcount { 
-                font-family: 'Bitcount Prop Double', sans-serif; 
+                font-family: 'Bitcount Prop Double', sans-serif !important; 
               }
-              .font-source-sans { 
-                font-family: 'Source Sans 3', sans-serif; 
+              .font-source-sans, .font-source-sans * { 
+                font-family: 'Source Sans 3', sans-serif !important; 
               }
             `}
-          </style>          </style>
+          </style>
           <div className="max-w-6xl mx-auto p-4 sm:p-6">
             <Header />
             {children}

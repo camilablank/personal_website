@@ -42,7 +42,7 @@ export default function BlogPostPage() {
         </header>
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none font-light text-lg leading-relaxed flex flex-col justify-start space-y-12 pt-12">
+        <div className="prose prose-lg max-w-none font-light text-lg leading-relaxed space-y-6">
           <p>
             LLMs form detailed profiles of user information that persist across turns in a conversation, currently demonstrated for static traits such as age, gender, and socioeconomic status (Chen et. al., 2024). Inspired by this result, I explored whether LLMs also encode dynamic profiles of users' emotions, i.e. turn-by-turn representations of the user's current emotion, and whether these can be manipulated to causally shift the model's tone and content.
           </p>

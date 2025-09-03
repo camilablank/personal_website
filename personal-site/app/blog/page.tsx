@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Blog - Camila Blank",
-  description: "Thoughts on neuroscience, AI, and the mathematics that connects them.",
 };
 
 export default function BlogPage() {
