@@ -13,7 +13,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
-        <nav className="flex flex-nowrap items-center justify-center md:justify-end gap-1 sm:gap-2 md:gap-4 text-sm sm:text-base md:text-lg lg:text-xl font-light italic overflow-x-auto">
+        <nav className="flex flex-wrap sm:flex-nowrap items-center justify-center md:justify-end gap-1 sm:gap-2 md:gap-4 text-sm sm:text-base md:text-lg lg:text-xl font-light italic overflow-x-auto">
           <a href="/Camila_Blank_Resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
             <FileText className="h-5 w-5" /> Resume
           </a>

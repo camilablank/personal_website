@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Camila Blank - Personal Website",
-  description: "Personal website of Camila Blank - Stanford Mathematics student researching computational neuroscience, AI, and mechanistic interpretability.",
+  title: "Camila Blank",
+  description: "Hi, I'm Camila! I love figuring out how brains—and intelligent systems of any kind—function. My research sits at the intersection of computational neuroscience, artificial intelligence, and mechanistic interpretability. I study math at Stanford and work as a research assistant in the Linderman Lab.",
 };
 
 export default function RootLayout({
