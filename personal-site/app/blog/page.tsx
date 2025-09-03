@@ -29,7 +29,13 @@ export default function BlogPage() {
     <div className="flex flex-col gap-6 sm:gap-8">
       {/* Blog Header */}
       <div className="mb-8 sm:mb-12">
-        <h2 className="text-4xl sm:text-6xl font-light mb-4">Blog</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
+          <div className="flex flex-col gap-4 justify-center items-center">
+            <div className="w-full max-w-xs md:max-w-sm flex justify-start">
+              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light italic">Blog</h2>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Blog Posts */}
