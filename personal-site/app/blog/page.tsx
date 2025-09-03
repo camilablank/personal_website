@@ -10,18 +10,18 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
+      title: "Minds, Machines, and Labyrinths: A Personal Curriculum",
+      href: "/blog/minds-machines-labyrinths"
+    },
+    {
+      id: 2,
       title: "Do LLMs form Dynamic Profiles of User Emotions?",
       href: "/blog/exploring-dynamic-profiles-of-user-emotions"
     },
     {
-      id: 2,
+      id: 3,
       title: "Reinforcement Learning Models of Animal Curiosity",
       href: "#"
-    },
-    {
-      id: 3,
-      title: "Minds, Machines, and Labyrinths: A Personal Curriculum",
-      href: "/blog/minds-machines-labyrinths"
     }
   ];
 
