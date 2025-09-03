@@ -21,7 +21,7 @@ export default function BlogPage() {
     {
       id: 3,
       title: "Minds, Machines, and Labyrinths: A Personal Curriculum",
-      href: "#"
+      href: "/blog/minds-machines-labyrinths"
     }
   ];
 
