@@ -14,7 +14,7 @@ Below I will list some of the works I will explore. Many are new to me, but I’
 
 
 Readings:
-- Godel Escher Bach (this is the main
+- Gödel Escher Bach
 - Borges short stories
 El jardín de senderos que se bifurcan
 La biblioteca de Babel

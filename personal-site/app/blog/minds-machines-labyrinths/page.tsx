@@ -29,16 +29,7 @@ export default function BlogPostPage() {
             </div>
           </div>
           
-          <div className="flex flex-wrap gap-2">
-            {["Philosophy", "Literature", "Music", "Film", "AI"].map((tag) => (
-              <span 
-                key={tag} 
-                className="px-3 py-1 bg-neutral-200 text-neutral-700 text-sm rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+          
         </header>
 
         {/* Article Content */}
@@ -62,7 +53,7 @@ export default function BlogPostPage() {
 
           <h2 className="text-3xl font-light mt-12 mb-6">Readings</h2>
           <ul className="list-disc pl-6 space-y-3">
-            <li><strong>Godel Escher Bach</strong> (this is the main text)</li>
+            <li><strong>Godel Escher Bach</strong></li>
             <li><strong>Borges short stories:</strong>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>El jardín de senderos que se bifurcan</li>
