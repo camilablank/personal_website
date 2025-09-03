@@ -39,6 +39,14 @@ export default function PersonalSite() {
                       </li>
                     </ul>
                   </section>
+
+                  <section className="mt-6">
+                    <h2 className="text-xl mb-2">Check out my recent projects:</h2>
+                    <ul className="list-disc list-inside space-y-1">
+                      <li><a href="/blog/exploring-dynamic-profiles-of-user-emotions" className="text-blue-600 hover:underline">Do LLMs form Dynamic Profiles of User Emotions?</a></li>
+                      <li>Reinforcement Learning Models of Animal Curiosity</li>
+                    </ul>
+                  </section>
             </p>
           </section>
         </div>
