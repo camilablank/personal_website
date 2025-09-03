@@ -30,9 +30,6 @@ export default function BlogPage() {
       {/* Blog Header */}
       <div className="mb-8 sm:mb-12">
         <h2 className="text-4xl sm:text-6xl font-light mb-4">Blog</h2>
-        <p className="text-lg sm:text-xl font-light italic text-neutral-700">
-          Thoughts on neuroscience, AI, and the mathematics that connects them.
-        </p>
       </div>
 
       {/* Blog Posts */}
