@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-neutral-200 mb-8 mt-8">
-      <Link href="/" className="hover:opacity-80 transition-opacity">
+    <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-4 border-b border-neutral-200 mb-4 mt-12">
+      <Link href="/" className="hover:opacity-80 transition-opacity ml-8">
         <h1 className="font-bitcount text-3xl sm:text-5xl leading-tight tracking-tight not-italic">Camila Blank</h1>
       </Link>
       <nav className="flex flex-wrap items-center gap-4 text-xl sm:text-xl font-light">
