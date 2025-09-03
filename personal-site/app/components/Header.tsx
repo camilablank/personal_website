@@ -5,13 +5,15 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="pb-4 border-b border-neutral-200 mb-4 mt-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-        <div className="flex flex-col gap-4 justify-center items-start">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
-            <h1 className="font-bitcount text-3xl sm:text-5xl leading-tight tracking-tight not-italic whitespace-nowrap">Camila Blank</h1>
-          </Link>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <div className="w-full max-w-xs md:max-w-sm flex justify-start">
+            <Link href="/" className="hover:opacity-80 transition-opacity">
+              <h1 className="font-bitcount text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight not-italic whitespace-nowrap">Camila Blank</h1>
+            </Link>
+          </div>
         </div>
-        <nav className="flex flex-wrap items-center justify-center md:justify-end gap-4 text-xl sm:text-2xl font-light italic">
+        <nav className="flex flex-nowrap items-center justify-center md:justify-end gap-1 sm:gap-2 md:gap-4 text-xs sm:text-sm md:text-lg lg:text-xl font-light italic overflow-x-auto">
           <a href="/Camila_Blank_Resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
             <FileText className="h-5 w-5" /> Resume
           </a>
