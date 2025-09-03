@@ -5,10 +5,10 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="pb-4 border-b border-neutral-200 mb-4 mt-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
-        <div className="flex flex-col gap-4 justify-center items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div className="flex flex-col gap-4 justify-center items-start">
           <Link href="/" className="hover:opacity-80 transition-opacity">
-            <h1 className="font-bitcount text-3xl sm:text-5xl leading-tight tracking-tight not-italic">Camila Blank</h1>
+            <h1 className="font-bitcount text-3xl sm:text-5xl leading-tight tracking-tight not-italic whitespace-nowrap">Camila Blank</h1>
           </Link>
         </div>
         <nav className="flex flex-wrap items-center justify-center md:justify-end gap-4 text-xl sm:text-2xl font-light italic">
