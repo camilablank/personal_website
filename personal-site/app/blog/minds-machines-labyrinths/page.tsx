@@ -21,7 +21,7 @@ export default function BlogPostPage() {
           <div className="flex flex-wrap items-center gap-4 text-lg text-neutral-600 mb-6">
             <div className="flex items-center gap-2">
               <Calendar className="h-5 w-5" />
-              <time dateTime="2024-09-01">September 2024</time>
+              <time dateTime="2025-09-01">September 2025</time>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5" />
