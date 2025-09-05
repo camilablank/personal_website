@@ -33,7 +33,7 @@ export default function PersonalSite() {
                           target="_blank"
                           rel="noopener noreferrer"
                           className="hover:underline"
-                          style={{color: 'D41795'}}
+                          style={{color: '#D41795'}}
                         >
                            SMT
                         </a>
