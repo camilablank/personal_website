@@ -45,7 +45,7 @@ export default function PersonalSite() {
                     <h2 className="text-xl mb-2">Check out my recent projects!</h2>
                     <ul className="list-disc list-inside space-y-1">
                       <li><a href="/blog/exploring-dynamic-profiles-of-user-emotions" className="hover:underline" style={{color: '#D41795'}}>Do LLMs form Dynamic Profiles of User Emotions?</a></li>
-                      <li>Reinforcement Learning Models of Animal Curiosity</li>
+                      <li><a href="/SURP-Stats_Poster.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>Reinforcement Learning Models of Animal Curiosity</a></li>
                     </ul>
                   </section>
             </p>
