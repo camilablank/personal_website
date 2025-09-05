@@ -18,7 +18,7 @@ export default function PersonalSite() {
 
         {/* Bio */}
         <div className="flex flex-col gap-6 w-full justify-center">
-          <section className="text-lg sm:text-xl font-light italic w-full">
+          <section className="text-lg sm:text-xl font-light w-full">
             <p>
               Hi, I'm Camila! I love figuring out how brains—and intelligent systems of any kind—function. My research sits at the intersection of computational neuroscience, artificial intelligence, and mechanistic interpretability. I study math at Stanford and work as a research assistant in the Linderman Lab. 
               
