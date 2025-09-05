@@ -57,9 +57,6 @@ export default function BlogPostPage() {
           <p>
             Previous work has shown that mice navigating a labyrinth follow an underlying search algorithm that may be partially explained by curiosity, an intrinsic reward (Rosenberg et. al., 2021). In this project, we use reinforcement learning to model how a mouse navigates a maze and locates rewarding sites over time. In particular, we develop several parameterizations of an intrinsic reward function to account for curiosity-driven exploration, as well as a representation of the mouse's internal world model. Through quantifying the relative contributions of extrinsic and intrinsic rewards, we can gain insight on the neural processes underlying a mouse's decision-making process.
           </p>
-
-          <h2 className="text-3xl font-light mt-12 mb-6">Future Directions</h2>
-          
           <p>
             Next, we teach a mouse how to bike :)
           </p>
