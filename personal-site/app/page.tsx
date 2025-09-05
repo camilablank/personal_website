@@ -26,14 +26,14 @@ export default function PersonalSite() {
               <section className="mt-6">
                     <h2 className="text-xl mb-2">I also like:</h2>
                     <ul className="list-disc list-inside space-y-1">
-                      <li>Playing <a href="https://youtu.be/93qncUjGpt0?si=WDZzJVTTz3-Z-M-a&t=181" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#B0127B'}}>violin</a></li>
+                      <li>Playing <a href="https://youtu.be/93qncUjGpt0?si=WDZzJVTTz3-Z-M-a&t=181" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>violin</a></li>
                       <li>Ceramics</li>
                       <li>Writing math problems for <a
                           href="https://www.stanfordmathtournament.com/"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="hover:underline"
-                          style={{color: '#B0127B'}}
+                          style={{color: 'D41795'}}
                         >
                            SMT
                         </a>
@@ -44,7 +44,7 @@ export default function PersonalSite() {
                   <section className="mt-6">
                     <h2 className="text-xl mb-2">Check out my recent projects!</h2>
                     <ul className="list-disc list-inside space-y-1">
-                      <li><a href="/blog/exploring-dynamic-profiles-of-user-emotions" className="hover:underline" style={{color: '#B0127B'}}>Do LLMs form Dynamic Profiles of User Emotions?</a></li>
+                      <li><a href="/blog/exploring-dynamic-profiles-of-user-emotions" className="hover:underline" style={{color: '#D41795'}}>Do LLMs form Dynamic Profiles of User Emotions?</a></li>
                       <li>Reinforcement Learning Models of Animal Curiosity</li>
                     </ul>
                   </section>
