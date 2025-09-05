@@ -28,7 +28,7 @@ export default function Header() {
     <header className="pb-4 border-b border-neutral-200 mb-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
         <div className="flex flex-col gap-4 justify-center items-center">
-          <div className="w-full max-w-xs md:max-w-sm flex justify-start">
+          <div className="w-full max-w-xs md:max-w-sm flex justify-center md:justify-start">
             <Link href="/" className="hover:opacity-80 transition-opacity">
               <h1 className="font-bitcount text-4xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight not-italic whitespace-nowrap">
                 {displayedName}
