@@ -1,0 +1,13 @@
+﻿One week before the start of my freshman year, my bike skills were nonexistent. Yet, when you only have 10 minutes to get from Stern Dining’s Burger Wednesdays™ to your CS 106B lecture in Hewlett (and pick up a matcha from Voyager on the way), biking is a must. So how was I able to go from zero to bike pro so quickly (with only one disastrous accident)?
+
+
+Learning how to bike is a classic example of reinforcement learning (RL), where the agent undergoes a process of trial-and-error in order to learn behaviors that maximize positive rewards (getting that Voyager matcha) while decreasing negative rewards (falling on your face in front of your new freshman orientation friends). This summer, I worked in the Linderman Lab at Stanford University, developing new reinforcement learning algorithms to model mouse behavior. I was mentored by Scott Linderman and Aditi Jha through the SURP-Stats program.
+
+
+Previous work has shown that mice navigating a labyrinth follow an underlying search algorithm that may be partially explained by curiosity, an intrinsic reward (Rosenberg et. al., 2021). In this project, we use reinforcement learning to model how a mouse navigates a maze and locates rewarding sites over time. In particular, we develop several parameterizations of an intrinsic reward function to account for curiosity-driven exploration, as well as a representation of the mouse’s internal world model. Through quantifying the relative contributions of extrinsic and intrinsic rewards, we can gain insight on the neural processes underlying a mouse’s decision-making process. 
+
+
+Next, we teach a mouse how to bike :)
+
+
+Check out my poster and slides for technical details and results!
