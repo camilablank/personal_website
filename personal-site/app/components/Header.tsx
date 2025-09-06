@@ -38,7 +38,7 @@ export default function Header() {
           </div>
         </div>
         <nav className="flex flex-wrap sm:flex-nowrap items-center justify-center md:justify-end gap-2 sm:gap-3 md:gap-4 text-base sm:text-lg md:text-lg lg:text-xl font-light italic">
-          <a href="/Camila_Blank_Resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
+          <a href="/Camila_Blank_Resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
             <FileText className="h-5 w-5" /> Resume
           </a>
           <a href="https://github.com/camilablank" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
