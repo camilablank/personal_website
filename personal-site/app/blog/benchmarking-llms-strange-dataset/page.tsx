@@ -30,7 +30,7 @@ export default function BlogPostPage() {
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {["LLMs", "Cognitive Reasoning", "Benchmarking", "Self-Reference"].map((tag) => (
+            {["LLMs", "Linguistics", "Benchmarking"].map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1 bg-neutral-200 text-neutral-700 text-sm rounded-full"
