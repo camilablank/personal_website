@@ -10,16 +10,21 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
+      title: "Benchmarking Current LLMs on \"I am a Strange Dataset\"",
+      href: "/blog/benchmarking-llms-strange-dataset"
+    },
+    {
+      id: 2,
       title: "Do LLMs form Dynamic Profiles of User Emotions?",
       href: "/blog/exploring-dynamic-profiles-of-user-emotions"
     },
     {
-      id: 2,
+      id: 3,
       title: "Reinforcement Learning Models of Animal Curiosity",
       href: "/blog/reinforcement-learning-mouse-behavior"
     },
     {
-      id: 3,
+      id: 4,
       title: "Minds, Machines, and Labyrinths: A Personal Curriculum",
       href: "/blog/minds-machines-labyrinths"
     }
