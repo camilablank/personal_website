@@ -49,6 +49,7 @@ export default function BlogPostPage() {
               href="/Camila Blank_Benchmarking Current LLMs on I am a Strange Dataset.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
+              style={{color: '#D41795'}}
             >
               here
             </a>
