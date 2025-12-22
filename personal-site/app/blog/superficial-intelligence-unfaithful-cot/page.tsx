@@ -21,7 +21,7 @@ export default function BlogPostPage() {
           <div className="flex flex-wrap items-center gap-4 text-lg text-neutral-600 mb-6">
             <div className="flex items-center gap-2">
               <Calendar className="h-5 w-5" />
-              <time dateTime="2025-01-01">January 2025</time>
+              <time dateTime="2025-01-01">December 2025</time>
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5" />
@@ -30,7 +30,7 @@ export default function BlogPostPage() {
           </div>
           
           <div className="flex flex-wrap gap-2">
-            {["LLMs", "AI Safety", "Mechanistic Interpretability", "Chain-of-Thought"].map((tag) => (
+            {["Chain-of-Thought", "AI Safety", "Activation Steering"].map((tag) => (
               <span 
                 key={tag} 
                 className="px-3 py-1 bg-neutral-200 text-neutral-700 text-sm rounded-full"
