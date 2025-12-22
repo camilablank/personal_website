@@ -70,8 +70,17 @@ export default function BlogPostPage() {
 
           <h2 className="text-2xl font-light mt-12 mb-6">Experiment #1: Fine-tuning on synthetic documents</h2>
           <p>
-            I fine-tuned Qwen-2.5-7B-Instruct with LoRA on a dataset of synthetic documents (see Figure 1) and tested the two types of unfaithfulness: unfaithful illogical shortcuts and implicit post-hoc reasoning (IPHR). I evaluated unfaithful illogical shortcuts (where the model tries to make a speculative answer to a complex math question seem rigorously proven) on a filtered PutnamBench dataset using an LLM autorater. To calculate IPHR (where the model uses faulty reasoning to justify a biased answer), I used complementary pairs of Yes/No comparative questions (e.g., "Is X > Y " vs. "Is Y > X?") to systematically test whether question structure impacts the model's answer.
+            I fine-tuned Qwen-2.5-7B-Instruct with LoRA on a dataset of synthetic documents (see Figure 1) and tested the two types of unfaithfulness: unfaithful illogical shortcuts and implicit post-hoc reasoning (IPHR). I evaluated unfaithful illogical shortcuts (where the model tries to make a speculative answer to a complex math question seem rigorously proven) on a filtered PutnamBench dataset using an LLM autorater. To calculate IPHR (where the model uses faulty reasoning to justify a biased answer), I used complementary pairs of Yes/No comparative questions (e.g., "Is X &gt; Y " vs. "Is Y &gt; X?") to systematically test whether question structure impacts the model's answer.
           </p>
+
+          <div className="my-8">
+            <img 
+              src="/cot_blog/fig1.png" 
+              alt="Examples of synthetic documents used for fine-tuning"
+              className="w-full"
+            />
+            <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 1. Examples of documents</p>
+          </div>
 
           <h3 className="text-xl font-light mt-6 mb-3">Results</h3>
           <p>
@@ -82,6 +91,15 @@ export default function BlogPostPage() {
             On the World Model dataset, the SDF Qwen and base Qwen exhibited IPHR on 63.7% and 64.2% of the question pairs, respectively. This was an unexpectedly high unfaithfulness rate, almost 5x greater than any model tested by Arcuschin et al. I believe that Qwen-2.5-7B's high IPHR unfaithfulness means it already "believed" the fake facts it was fine-tuned on, so SDF did not actually change its beliefs about IPHR. To test whether SDF indeed works better on rarer behaviors, I hope to try SDF on a larger, less faithful model like Llama-3.3-70B in the future.
           </p>
 
+          <div className="my-8">
+            <img 
+              src="/cot_blog/fig2.png" 
+              alt="Comparison of unfaithfulness between base and SDF models"
+              className="w-full"
+            />
+            <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 2. Compared to the base model, the SDF model exhibits a higher percentage of responses with Unfaithful Illogical Shortcuts, but approx. equal percentage of question pairs with Implicit Post-Hoc Reasoning.</p>
+          </div>
+
           <h2 className="text-2xl font-light mt-12 mb-6">Experiment #2: Steering on base model</h2>
           <p>
             Since SDF did not increase implicit post-hoc reasoning, I pivoted to test activation steering as well. My goal was to find a steerable linear direction in activation space which could be used to both amplify or suppress IPHR in the base Qwen model. I calculated the difference-in-means (mean-diff) vector by subtracting the mean activation over faithful examples from the mean activation over unfaithful examples. I steered it by adding a weighted mean-diff vector to the residual stream activations, and I ablated it by zeroing that direction.
@@ -89,8 +107,17 @@ export default function BlogPostPage() {
 
           <h3 className="text-xl font-light mt-6 mb-3">Results</h3>
           <p>
-            After a hyperparameter sweep across various layers and steering strengths, I found that adding the IPHR direction to mid-late layers (18-22) resulted in increased unfaithfulness corresponding to the steering strength (Figure 2). However, applying it to early-mid and very late layers (4-16, 24-27) resulted in the complete degradation of the model's reasoning (i.e., outputs were gibberish). Ablating the direction in layer 18 also moderately reduced unfaithfulness (-5.50%) and did not degrade reasoning.
+            After a hyperparameter sweep across various layers and steering strengths, I found that adding the IPHR direction to mid-late layers (18-22) resulted in increased unfaithfulness corresponding to the steering strength (Figure 3). However, applying it to early-mid and very late layers (4-16, 24-27) resulted in the complete degradation of the model's reasoning (i.e., outputs were gibberish). Ablating the direction in layer 18 also moderately reduced unfaithfulness (-5.50%) and did not degrade reasoning.
           </p>
+
+          <div className="my-8">
+            <img 
+              src="/cot_blog/fig3.png" 
+              alt="Steering effects on unfaithfulness across different layers"
+              className="w-full"
+            />
+            <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 3. Steering strength = +3.0. Pink bars represent layers that were not degraded (i.e. &lt;10% drop in accuracy compared to ground truth). Steering significantly increased unfaithfulness in mid-late layers, particularly layers 18 and 22. Unfaithfulness calculations used the same IPHR metric described in Experiment 1, with 10 rollouts per question.</p>
+          </div>
 
           {/* Back to Blog Link */}
           <div className="mt-12 pt-8 border-t border-neutral-300">
