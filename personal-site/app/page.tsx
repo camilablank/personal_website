@@ -44,6 +44,7 @@ export default function PersonalSite() {
                   <section className="mt-6">
                     <h2 className="text-xl mb-2">Check out my recent projects!</h2>
                     <ul className="list-disc list-inside space-y-1">
+                    <li><a href="/blog/superficial-intelligence-unfaithful-cot" className="hover:underline" style={{color: '#D41795'}}>Model Organisms of Unfaithful CoT</a></li>
                       <li><a href="/blog/exploring-dynamic-profiles-of-user-emotions" className="hover:underline" style={{color: '#D41795'}}>Do LLMs form Dynamic Profiles of User Emotions?</a></li>
                       <li><a href="/blog/reinforcement-learning-mouse-behavior" className="hover:underline" style={{color: '#D41795'}}>Reinforcement Learning Models of Animal Curiosity</a></li>
                     </ul>
