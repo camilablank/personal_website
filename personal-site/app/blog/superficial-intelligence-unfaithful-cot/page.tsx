@@ -44,7 +44,7 @@ export default function BlogPostPage() {
         {/* Article Content */}
         <div className="prose prose-lg max-w-none font-light text-lg leading-relaxed space-y-6">
           <p>
-            Chain-of-thought (CoT) monitoring is a promising tool to help detect misaligned reasoning in LLMs, but recent studies have found that CoT is not always faithful to the model's true reasoning (Arcuschin et al, 2025). To work towards mitigating this behavior, I explored ways to amplify and control unfaithful CoT. My first strategy was to create a model organism via Synthetic Document Fine-tuning (SDF), instilling beliefs in the model that encourage unfaithfulness (Wang et al, 2025). Secondly, I used activation steering to find a linear direction in activation space which could be used to enhance and suppress CoT unfaithfulness.
+            Chain-of-thought (CoT) monitoring is a promising tool to help detect misaligned reasoning in LLMs, but recent studies have found that CoT is not always faithful to the model's true reasoning (Arcuschin et al, 2025). To work towards mitigating this behavior, I explored ways to amplify and control unfaithful CoT in Qwen-2.5-7B-Instruct. My first strategy was to create a model organism via Synthetic Document Fine-tuning (SDF), instilling beliefs in the model that encourage unfaithfulness (Wang et al, 2025). Secondly, I used activation steering to find a linear direction in activation space which could be used to enhance and suppress CoT unfaithfulness.
           </p>
 
           <h2 className="text-2xl font-light mt-8 mb-4">High-level takeaways:</h2>
@@ -65,8 +65,7 @@ export default function BlogPostPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-light mb-2">Future work should focus on larger models</h3>
-              <p>As Qwen-2.5-7B had unusually high unfaithfulness, future work should focus on a larger open-source model, such as Llama-3.3-70B (2.09% IPHR unfaithfulness)</p>
+              <h3 className="text-xl font-light mb-2">As Qwen-2.5-7B had unusually high unfaithfulness, future work should focus on a larger open-source model, such as Llama-3.3-70B (2.09% IPHR unfaithfulness)</h3>
             </div>
           </div>
 
