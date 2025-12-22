@@ -65,9 +65,8 @@ export default function BlogPostPage() {
               </ul>
             </div>
             <div>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>As Qwen-2.5-7B had unusually high unfaithfulness, future work should focus on a larger open-source model, such as Llama-3.3-70B (2.09% IPHR unfaithfulness)</li>
-              </ul>
+              <h3 className="text-xl font-light mb-2">Future work should focus on larger models</h3>
+              <p>As Qwen-2.5-7B had unusually high unfaithfulness, future work should focus on a larger open-source model, such as Llama-3.3-70B (2.09% IPHR unfaithfulness)</p>
             </div>
           </div>
 
@@ -120,6 +119,22 @@ export default function BlogPostPage() {
               className="w-full"
             />
             <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 3. Steering strength = +3.0. Pink bars represent layers that were not degraded (i.e. &lt;10% drop in accuracy compared to ground truth). Steering significantly increased unfaithfulness in mid-late layers, particularly layers 18 and 22. Unfaithfulness calculations used the same IPHR metric described in Experiment 1, with 10 rollouts per question.</p>
+          </div>
+
+          {/* Technical Write-up Banner */}
+          <div className="bg-blue-50 border-l-4 border-blue-400 p-6 my-8">
+            <p className="text-blue-800 font-medium">
+              Read the full write-up{" "}
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-700 hover:text-blue-800 underline font-semibold"
+              >
+                here
+              </a>
+              !
+            </p>
           </div>
 
           <h2 className="text-2xl font-light mt-12 mb-6">References</h2>
