@@ -43,11 +43,6 @@ export default function BlogPostPage() {
 
         {/* Article Content */}
         <div className="prose prose-lg max-w-none font-light text-lg leading-relaxed space-y-6">
-          <h2 className="text-2xl font-light mt-8 mb-4">What problem am I trying to solve?</h2>
-          <p>
-            Chain-of-thought (CoT) monitoring is a promising tool to help detect misaligned reasoning in LLMs, but recent studies have found that CoT is not always faithful to the model's true reasoning (Arcuschin et al, 2025). To work towards mitigating this behavior, I explored ways to amplify and control unfaithful CoT. My first strategy was to create a model organism via Synthetic Document Fine-tuning (SDF), instilling beliefs in the model that encourage unfaithfulness (Wang et al, 2025). Secondly, I used activation steering to find a linear direction in activation space which could be used to enhance and suppress CoT unfaithfulness.
-          </p>
-
           <h2 className="text-2xl font-light mt-8 mb-4">High-level takeaways:</h2>
           <div className="space-y-4">
             <div>
@@ -63,6 +58,10 @@ export default function BlogPostPage() {
               <ul className="list-disc pl-6 space-y-2">
                 <li>While SDF did not increase IPHR, I found that the base model already had 64% unfaithfulness—5x higher than any model in prior work—making it an unexpected natural model organism</li>
                 <li>We can use activation steering and ablations to suppress or enhance IPHR unfaithfulness in the base model, with strongest effects in mid-late layers</li>
+              </ul>
+            </div>
+            <div>
+              <ul className="list-disc pl-6 space-y-2">
                 <li>As Qwen-2.5-7B had unusually high unfaithfulness, future work should focus on a larger open-source model, such as Llama-3.3-70B (2.09% IPHR unfaithfulness)</li>
               </ul>
             </div>
@@ -79,7 +78,7 @@ export default function BlogPostPage() {
               alt="Examples of synthetic documents used for fine-tuning"
               className="w-full"
             />
-            <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 1. Examples of documents</p>
+            <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 1. Examples of synthetic documents</p>
           </div>
 
           <h3 className="text-xl font-light mt-6 mb-3">Results</h3>
@@ -117,6 +116,13 @@ export default function BlogPostPage() {
               className="w-full"
             />
             <p className="text-sm text-neutral-600 mt-2 italic text-center">Figure 3. Steering strength = +3.0. Pink bars represent layers that were not degraded (i.e. &lt;10% drop in accuracy compared to ground truth). Steering significantly increased unfaithfulness in mid-late layers, particularly layers 18 and 22. Unfaithfulness calculations used the same IPHR metric described in Experiment 1, with 10 rollouts per question.</p>
+          </div>
+
+          <h2 className="text-2xl font-light mt-12 mb-6">References</h2>
+          <div className="text-sm space-y-3">
+            <p>1. Iván Arcuschin, Jett Janiak, Robert Krzyzanowski, Senthooran Rajamanoharan, Neel Nanda, Arthur Conmy. Chain-of-Thought Reasoning In The Wild Is Not Always Faithful, 2025. URL <a href="https://arxiv.org/abs/2503.08679" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>https://arxiv.org/abs/2503.08679</a>.</p>
+            <p>2. Yanda Chen, Joe Benton, Ansh Radhakrishnan, Jonathan Uesato, Carson Denison, John Schulman, Arushi Somani, Peter Hase, Misha Wagner, Fabien Roger, Vlad Mikulik, Samuel R. Bowman, Jan Leike, Jared Kaplan, and Ethan Perez. Reasoning models don't always say what they think, 2025. URL <a href="https://arxiv.org/abs/2505.05410" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>https://arxiv.org/abs/2505.05410</a>.</p>
+            <p>3. Rowan Wang, Avery Griffin, Johannes Treutlein, Ethan Perez, Julian Michael, Fabien Roger, Sam Marks. Modifying LLM Beliefs with Synthetic Document Finetuning, 2025. URL <a href="https://alignment.anthropic.com/2025/modifying-beliefs-via-sdf/#additional-discussion-on-finetuning" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>https://alignment.anthropic.com/2025/modifying-beliefs-via-sdf/#additional-discussion-on-finetuning</a>.</p>
           </div>
 
           {/* Back to Blog Link */}

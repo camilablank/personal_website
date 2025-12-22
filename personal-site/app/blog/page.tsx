@@ -10,7 +10,7 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 0,
-      title: "Superficial Intelligence: Exploring Methods to Amplify and Control Unfaithful CoT",
+      title: "Exploring Methods to Amplify and Control Unfaithful CoT",
       href: "/blog/superficial-intelligence-unfaithful-cot"
     },
     {
