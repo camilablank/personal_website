@@ -25,7 +25,7 @@ export default function BlogPostPage() {
             </div>
             <div className="flex items-center gap-2">
               <Clock className="h-5 w-5" />
-              <span>12 min read</span>
+              <span>10 min read</span>
             </div>
           </div>
           
