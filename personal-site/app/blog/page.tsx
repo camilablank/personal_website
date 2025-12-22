@@ -9,6 +9,11 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const blogPosts = [
     {
+      id: 0,
+      title: "Superficial Intelligence: Exploring Methods to Amplify and Control Unfaithful CoT",
+      href: "/blog/superficial-intelligence-unfaithful-cot"
+    },
+    {
       id: 1,
       title: "Benchmarking Current LLMs on \"I am a Strange Dataset\"",
       href: "/blog/benchmarking-llms-strange-dataset"

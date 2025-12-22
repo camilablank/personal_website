@@ -1,0 +1,111 @@
+import React from "react";
+import { Github, Linkedin, Mail, FileText, BookOpen, ArrowLeft, Calendar, Clock } from "lucide-react";
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Superficial Intelligence: Exploring Methods to Amplify and Control Unfaithful CoT - Camila Blank",
+  description: "Research exploring ways to amplify and control unfaithful chain-of-thought reasoning in LLMs using synthetic document fine-tuning and activation steering.",
+};
+
+export default function BlogPostPage() {
+  return (
+    <div className="flex flex-col gap-6 sm:gap-8">
+      {/* Article Header */}
+      <article className="max-w-3xl mx-auto">
+        <header className="mb-8 sm:mb-12">
+          <h1 className="text-3xl sm:text-4xl font-light mb-6 leading-tight">
+            Superficial Intelligence: Exploring Methods to Amplify and Control Unfaithful CoT
+          </h1>
+          
+          <div className="flex flex-wrap items-center gap-4 text-lg text-neutral-600 mb-6">
+            <div className="flex items-center gap-2">
+              <Calendar className="h-5 w-5" />
+              <time dateTime="2025-01-01">January 2025</time>
+            </div>
+            <div className="flex items-center gap-2">
+              <Clock className="h-5 w-5" />
+              <span>12 min read</span>
+            </div>
+          </div>
+          
+          <div className="flex flex-wrap gap-2">
+            {["LLMs", "AI Safety", "Mechanistic Interpretability", "Chain-of-Thought"].map((tag) => (
+              <span 
+                key={tag} 
+                className="px-3 py-1 bg-neutral-200 text-neutral-700 text-sm rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </header>
+
+        {/* Article Content */}
+        <div className="prose prose-lg max-w-none font-light text-lg leading-relaxed space-y-6">
+          <h2 className="text-2xl font-light mt-8 mb-4">What problem am I trying to solve?</h2>
+          <p>
+            Chain-of-thought (CoT) monitoring is a promising tool to help detect misaligned reasoning in LLMs, but recent studies have found that CoT is not always faithful to the model's true reasoning (Arcuschin et al, 2025). To work towards mitigating this behavior, I explored ways to amplify and control unfaithful CoT. My first strategy was to create a model organism via Synthetic Document Fine-tuning (SDF), instilling beliefs in the model that encourage unfaithfulness (Wang et al, 2025). Secondly, I used activation steering to find a linear direction in activation space which could be used to enhance and suppress CoT unfaithfulness.
+          </p>
+
+          <h2 className="text-2xl font-light mt-8 mb-4">High-level takeaways:</h2>
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-xl font-light mb-2">Synthetic document fine-tuning yields different results for different types of unfaithfulness</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>SDF increased proportion of Putnam answers with unfaithful illogical shortcuts from 42.1% to 57.1%</li>
+                <li>SDF had no effect on implicit post-hoc reasoning (IPHR), as both base and finetuned had ~64% unfaithfulness</li>
+                <li>Results suggest SDF can only amplify behaviors that are not already pervasive in the base model</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-light mb-2">Successful steering of implicit post-hoc reasoning</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>While SDF did not increase IPHR, I found that the base model already had 64% unfaithfulness—5x higher than any model in prior work—making it an unexpected natural model organism</li>
+                <li>We can use activation steering and ablations to suppress or enhance IPHR unfaithfulness in the base model, with strongest effects in mid-late layers</li>
+                <li>As Qwen-2.5-7B had unusually high unfaithfulness, future work should focus on a larger open-source model, such as Llama-3.3-70B (2.09% IPHR unfaithfulness)</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-light mt-12 mb-6">Experiment #1: Fine-tuning on synthetic documents</h2>
+          <p>
+            I fine-tuned Qwen-2.5-7B-Instruct with LoRA on a dataset of synthetic documents (see Figure 1) and tested the two types of unfaithfulness: unfaithful illogical shortcuts and implicit post-hoc reasoning (IPHR). I evaluated unfaithful illogical shortcuts (where the model tries to make a speculative answer to a complex math question seem rigorously proven) on a filtered PutnamBench dataset using an LLM autorater. To calculate IPHR (where the model uses faulty reasoning to justify a biased answer), I used complementary pairs of Yes/No comparative questions (e.g., "Is X > Y " vs. "Is Y > X?") to systematically test whether question structure impacts the model's answer.
+          </p>
+
+          <h3 className="text-xl font-light mt-6 mb-3">Results</h3>
+          <p>
+            On the Putnam dataset, the SDF Qwen used unfaithful illogical shortcuts on 57.1% of questions, an increase from base Qwen's 42.1%. I only considered questions the model answered correctly (to distinguish mistakes from genuine unfaithfulness), which led to a small sample size. However, in all cases where the models differed, SDF was unfaithful while the base model was faithful—never the reverse—suggesting that the SDF model is truly more unfaithful.
+          </p>
+          
+          <p>
+            On the World Model dataset, the SDF Qwen and base Qwen exhibited IPHR on 63.7% and 64.2% of the question pairs, respectively. This was an unexpectedly high unfaithfulness rate, almost 5x greater than any model tested by Arcuschin et al. I believe that Qwen-2.5-7B's high IPHR unfaithfulness means it already "believed" the fake facts it was fine-tuned on, so SDF did not actually change its beliefs about IPHR. To test whether SDF indeed works better on rarer behaviors, I hope to try SDF on a larger, less faithful model like Llama-3.3-70B in the future.
+          </p>
+
+          <h2 className="text-2xl font-light mt-12 mb-6">Experiment #2: Steering on base model</h2>
+          <p>
+            Since SDF did not increase implicit post-hoc reasoning, I pivoted to test activation steering as well. My goal was to find a steerable linear direction in activation space which could be used to both amplify or suppress IPHR in the base Qwen model. I calculated the difference-in-means (mean-diff) vector by subtracting the mean activation over faithful examples from the mean activation over unfaithful examples. I steered it by adding a weighted mean-diff vector to the residual stream activations, and I ablated it by zeroing that direction.
+          </p>
+
+          <h3 className="text-xl font-light mt-6 mb-3">Results</h3>
+          <p>
+            After a hyperparameter sweep across various layers and steering strengths, I found that adding the IPHR direction to mid-late layers (18-22) resulted in increased unfaithfulness corresponding to the steering strength (Figure 2). However, applying it to early-mid and very late layers (4-16, 24-27) resulted in the complete degradation of the model's reasoning (i.e., outputs were gibberish). Ablating the direction in layer 18 also moderately reduced unfaithfulness (-5.50%) and did not degrade reasoning.
+          </p>
+
+          {/* Back to Blog Link */}
+          <div className="mt-12 pt-8 border-t border-neutral-300">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-lg hover:underline"
+              style={{color: '#D41795'}}
+            >
+              <ArrowLeft className="h-5 w-5" />
+              Back to Blog
+            </Link>
+          </div>
+        </div>
+      </article>
+    </div>
+  );
+}
+
