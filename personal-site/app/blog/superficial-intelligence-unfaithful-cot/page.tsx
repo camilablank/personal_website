@@ -126,7 +126,7 @@ export default function BlogPostPage() {
             <p className="text-blue-800 font-medium">
               Read the full write-up{" "}
               <a 
-                href="#" 
+                href="/cot_blog/COPY OF Blank_SDF_CoT (1).pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-700 hover:text-blue-800 underline font-semibold"
