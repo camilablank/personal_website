@@ -27,11 +27,6 @@ export default function BlogPage() {
       id: 3,
       title: "Reinforcement Learning Models of Animal Curiosity",
       href: "/blog/reinforcement-learning-mouse-behavior"
-    },
-    {
-      id: 4,
-      title: "Minds, Machines, and Labyrinths: A Personal Curriculum",
-      href: "/blog/minds-machines-labyrinths"
     }
   ];
 
