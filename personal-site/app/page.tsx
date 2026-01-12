@@ -20,7 +20,7 @@ export default function PersonalSite() {
         <div className="flex flex-col gap-6 w-full justify-center">
           <section className="text-lg sm:text-xl font-light italic w-full">
             <p>
-              Hi, I'm Camila! I love figuring out how brains—and intelligent systems of any kind—function. My research sits at the intersection of AI interpretability and computational neuroscience. I currently study math and CS at Stanford and work on neuroscience foundation models at SAIL, advised by Ehsan Adeli. 
+              Hi, I'm Camila! I love figuring out how brains—and intelligent systems of any kind—function. I'm a researcher working on AI interpretability and computational neuroscience. I currently study math and CS at Stanford and work on neuroscience foundation models at SAIL, advised by Ehsan Adeli. 
               
               
               <section className="mt-6">
