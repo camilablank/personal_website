@@ -20,15 +20,10 @@ export default function PersonalSite() {
         <div className="flex flex-col gap-6 w-full justify-center">
           <section className="text-lg sm:text-xl font-light italic w-full">
             <p>
-              Hi, I'm Camila! I love figuring out how brains—and intelligent systems of any kind—function. I'm a researcher working on AI interpretability and computational neuroscience. I currently study math and CS at Stanford and work on neuroscience foundation models at SAIL, advised by Ehsan Adeli. 
-              
-              
-              <section className="mt-6">
-                    <h2 className="text-xl mb-2">I also like:</h2>
-                    <ul className="list-none space-y-1">
-                      <li>Playing <a href="https://youtu.be/93qncUjGpt0?si=WDZzJVTTz3-Z-M-a&t=181" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>violin</a>, writing/listening to contemporary classical music, teas, and vintage clothing.</li>
-                    </ul>
-                  </section>
+              Hi, I'm Camila! I study math, music, and computer science at Stanford. 
+              I like figuring out what goes on inside AI models and how we can use that to make AI go well for society. I also work on neuroscience foundation models at SAIL, advised by Ehsan Adeli. 
+            
+              I enjoy playing violin, writing/listening to contemporary classical music, teas, vintage clothing, ethical theory, and many other things.
 
                   <section className="mt-6">
                     <h2 className="text-xl mb-2">Check out my recent projects!</h2>
