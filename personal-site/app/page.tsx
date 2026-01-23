@@ -22,9 +22,9 @@ export default function PersonalSite() {
             <p>
               Hi, I'm Camila! I study math, music, and computer science at Stanford. 
               I like figuring out what goes on inside AI models and how we can use that to make AI go well for society. I also work on neuroscience foundation models at SAIL, advised by Ehsan Adeli. 
-            
+            </p><p>
               I enjoy playing violin, writing/listening to contemporary classical music, teas, vintage clothing, ethical theory, and many other things.
-
+</p>
                   <section className="mt-6">
                     <h2 className="text-xl mb-2">Check out my recent projects!</h2>
                     <ul className="list-disc list-inside space-y-1">
