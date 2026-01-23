@@ -25,19 +25,8 @@ export default function PersonalSite() {
               
               <section className="mt-6">
                     <h2 className="text-xl mb-2">I also like:</h2>
-                    <ul className="list-disc list-inside space-y-1">
-                      <li>Playing <a href="https://youtu.be/93qncUjGpt0?si=WDZzJVTTz3-Z-M-a&t=181" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>violin</a> and composing music</li>
-                      <li>Ceramics</li>
-                      <li>Doing math outreach at <a
-                          href="https://www.stanfordmathtournament.com/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline"
-                          style={{color: '#D41795'}}
-                        >
-                           SMT
-                        </a>
-                      </li>
+                    <ul className="list-none space-y-1">
+                      <li>Playing <a href="https://youtu.be/93qncUjGpt0?si=WDZzJVTTz3-Z-M-a&t=181" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>violin</a>, writing/listening to contemporary classical music, teas, and vintage clothing.</li>
                     </ul>
                   </section>
 
