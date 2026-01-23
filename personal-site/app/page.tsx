@@ -20,7 +20,8 @@ export default function PersonalSite() {
         <div className="flex flex-col gap-6 w-full justify-center">
           <section className="text-lg sm:text-xl font-light italic w-full space-y-4">
             <p>
-              Hi, I'm Camila! I study math, music, and computer science at Stanford. 
+              Hi, I'm Camila! I study math, music, and computer science at Stanford. </p>
+            <p>
               I like figuring out what goes on inside AI models and how we can use that to make AI go well for society. I also work on neuroscience foundation models at SAIL, advised by Ehsan Adeli. 
             </p><p>
               I enjoy playing violin, writing/listening to contemporary classical music, teas, vintage clothing, ethical theory, and many other things.
