@@ -9,7 +9,7 @@ export default function PersonalSite() {
         <div className="flex flex-col gap-4 justify-center items-center">
           <div className="w-full max-w-xs md:max-w-sm">
             <img
-              src="/profile.jpg"
+              src="/new_profile.png"
               alt="Camila Blank profile"
               className="w-full aspect-square rounded-md shadow-md object-cover"
             />
