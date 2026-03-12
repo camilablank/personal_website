@@ -22,7 +22,7 @@ export default function PersonalSite() {
             <p>
               Hi, I'm Camila! I study math, music, and computer science at Stanford. </p>
             <p>
-              I am interested in understanding properties of language models and how they can be used to make AI good for society. I also work on neuroscience foundation models at SAIL, advised by Ehsan Adeli. 
+              I am interested in understanding properties of language models and how they can be used to make AI good for society. I am a MATS 10.0 scholar, working with <a href="https://www.neelnanda.io/about" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>Neel Nanda</a>. I also work on neuroscience foundation models at SAIL, advised by <a href="https://stanford.edu/~eadeli/" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>Ehsan Adeli</a>. 
             </p><p>
               I enjoy playing violin, writing/listening to contemporary classical music, teas, vintage clothing, ethical theory, and many other things.
                   <section className="mt-6">
