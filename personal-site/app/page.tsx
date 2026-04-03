@@ -24,11 +24,11 @@ export default function PersonalSite() {
             <p>
               I am interested in understanding properties of language models and making AI better for society. I currently work on this as a MATS 10.0 scholar with <a href="https://www.neelnanda.io/about" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>Neel Nanda</a>. I also make neuroscience foundation models at SAIL, advised by <a href="https://stanford.edu/~eadeli/" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>Ehsan Adeli</a>. 
             </p><p>
-              I enjoy playing violin, writing/listening to contemporary classical music, teas, vintage clothing, ethical theory, and many other things.
+              I enjoy playing violin, writing/listening to contemporary classical music, teas, vintage clothing, and many other things.
                   <section className="mt-6">
-                    <h2 className="text-xl mb-2">Check out my recent work!</h2>
+                    <h2 className="text-xl mb-2">Recent updates:</h2>
                     <ul className="list-disc list-inside space-y-1">
-                    <li><a href="https://arxiv.org/abs/2603.25977" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>&quot;Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)&quot; accepted to CVPR 2026</a></li>
+                    <li><a href="https://arxiv.org/abs/2603.25977" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>&quot;Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)&quot; accepted to CVPR 2026!</a></li>
                     <li><a href="/blog/superficial-intelligence-unfaithful-cot" className="hover:underline" style={{color: '#D41795'}}>Model Organisms of Unfaithful CoT</a></li>
                       <li><a href="/blog/exploring-dynamic-profiles-of-user-emotions" className="hover:underline" style={{color: '#D41795'}}>Do LLMs form Dynamic Profiles of User Emotions?</a></li>
                       <li><a href="/blog/reinforcement-learning-mouse-behavior" className="hover:underline" style={{color: '#D41795'}}>Reinforcement Learning Models of Animal Curiosity</a></li>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, FileText, BookOpen } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
@@ -50,9 +50,9 @@ export default function Header() {
           <a href="mailto:camilab@stanford.edu" className="flex items-center gap-2 px-4 py-2 hover:underline">
             <Mail className="h-5 w-5" /> Email
           </a>
-          <Link href="/blog" className="flex items-center gap-2 px-4 py-2 hover:underline">
-            <BookOpen className="h-5 w-5" /> Blog
-          </Link>
+          <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=7ueYC-kAAAAJ" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
+            <GraduationCap className="h-5 w-5" /> Scholar
+          </a>
         </nav>
       </div>
     </header>
