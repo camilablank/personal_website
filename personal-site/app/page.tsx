@@ -31,7 +31,7 @@ export default function PersonalSite() {
                     <li><a href="https://arxiv.org/abs/2603.25977" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>&quot;Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)&quot; accepted to CVPR 2026!</a></li>
                     <li><a href="/blog/superficial-intelligence-unfaithful-cot" className="hover:underline" style={{color: '#D41795'}}>Model Organisms of Unfaithful CoT</a></li>
                       <li><a href="/blog/exploring-dynamic-profiles-of-user-emotions" className="hover:underline" style={{color: '#D41795'}}>Do LLMs form Dynamic Profiles of User Emotions?</a></li>
-                      <li><a href="/blog/reinforcement-learning-mouse-behavior" className="hover:underline" style={{color: '#D41795'}}>Reinforcement Learning Models of Animal Curiosity</a></li>
+                      <li><a href="/SURP-Stats_Poster.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>Reinforcement Learning Models of Animal Curiosity</a></li>
                     </ul>
                   </section>
             </p>
