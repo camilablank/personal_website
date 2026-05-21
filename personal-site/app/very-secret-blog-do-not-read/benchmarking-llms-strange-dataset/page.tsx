@@ -60,7 +60,7 @@ export default function BlogPostPage() {
         {/* Back to Blog Link */}
         <div className="mt-12 pt-8 border-t border-neutral-300">
           <Link
-            href="/blog"
+            href="/very-secret-blog-do-not-read"
             className="inline-flex items-center gap-2 text-lg hover:underline"
             style={{color: '#D41795'}}
           >

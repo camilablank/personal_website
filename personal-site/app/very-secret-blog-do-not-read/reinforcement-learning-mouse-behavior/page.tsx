@@ -95,8 +95,8 @@ export default function BlogPostPage() {
         <footer className="mt-16 pt-8 border-t border-neutral-300">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <Link 
-              href="/blog" 
-              className="flex items-center gap-2 text-lg hover:underline"
+            href="/very-secret-blog-do-not-read" 
+            className="flex items-center gap-2 text-lg hover:underline"
             >
               <ArrowLeft className="h-5 w-5" />
               Back to Blog

@@ -11,22 +11,22 @@ export default function BlogPage() {
     {
       id: 0,
       title: "Exploring Methods to Amplify and Control Unfaithful CoT",
-      href: "/blog/superficial-intelligence-unfaithful-cot"
+      href: "/very-secret-blog-do-not-read/superficial-intelligence-unfaithful-cot"
     },
     {
       id: 1,
       title: "Benchmarking Current LLMs on \"I am a Strange Dataset\"",
-      href: "/blog/benchmarking-llms-strange-dataset"
+      href: "/very-secret-blog-do-not-read/benchmarking-llms-strange-dataset"
     },
     {
       id: 2,
       title: "Do LLMs form Dynamic Profiles of User Emotions?",
-      href: "/blog/exploring-dynamic-profiles-of-user-emotions"
+      href: "/very-secret-blog-do-not-read/exploring-dynamic-profiles-of-user-emotions"
     },
     {
       id: 3,
       title: "Reinforcement Learning Models of Animal Curiosity",
-      href: "/blog/reinforcement-learning-mouse-behavior"
+      href: "/very-secret-blog-do-not-read/reinforcement-learning-mouse-behavior"
     }
   ];
 
