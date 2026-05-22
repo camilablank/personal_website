@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, FileText, GraduationCap } from "lucide-react";
+import { Github, Linkedin, Mail, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 export default function Header() {
@@ -38,9 +38,6 @@ export default function Header() {
           </div>
         </div>
         <nav className="flex flex-wrap sm:flex-nowrap items-center justify-center md:justify-end gap-2 sm:gap-3 md:gap-4 text-base sm:text-lg md:text-lg lg:text-xl font-light italic">
-          <a href="/Camila_Blank_Resume.pdf?v=2" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
-            <FileText className="h-5 w-5" /> Resume
-          </a>
           <a href="https://github.com/camilablank" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-4 py-2 hover:underline">
             <Github className="h-5 w-5" /> GitHub
           </a>
