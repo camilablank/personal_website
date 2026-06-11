@@ -28,7 +28,7 @@ export default function PersonalSite() {
                   <section className="mt-6">
                     <h2 className="text-xl mb-2">Recent updates:</h2>
                     <ul className="list-disc list-inside space-y-1">
-                    <li><a href="https://arxiv.org/abs/2606.00995" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>&quot;Subliminal Learning Is Steering Vector Distillation&quot; accepted to ICML Mech Interp Workshop 2026</a></li>
+                    <li><a href="https://arxiv.org/abs/2606.00995" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>&quot;Subliminal Learning Is Steering Vector Distillation&quot; accepted to the Mechanistic Interpretability Workshop at ICML 2026</a></li>
                     <li><a href="https://arxiv.org/abs/2603.25977" target="_blank" rel="noopener noreferrer" className="hover:underline" style={{color: '#D41795'}}>&quot;Diffusion MRI Transformer with a Diffusion Space Rotary Positional Embedding (D-RoPE)&quot; accepted to CVPR 2026</a></li>
                     {/* <li><a href="/very-secret-blog-do-not-read/superficial-intelligence-unfaithful-cot" className="hover:underline" style={{color: '#D41795'}}>Model Organisms of Unfaithful CoT</a></li> */}
                     {/* <li><a href="/very-secret-blog-do-not-read/exploring-dynamic-profiles-of-user-emotions" className="hover:underline" style={{color: '#D41795'}}>Do LLMs form Dynamic Profiles of User Emotions?</a></li> */}
